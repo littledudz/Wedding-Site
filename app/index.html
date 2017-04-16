@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="WebApp">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <title ng-bind="ngMeta.title"></title>
+        <meta name="description" content="{{ngMeta.description}}">
+        <meta name="author" content="{{ngMeta['author']}}">
+        <meta name="expires" content="never">
+        <meta name="distribution" content="global">
+        <meta name="locale" content="en_US">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-route.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/0.3.9/ngMeta.min.js"></script>
+        <link rel="stylesheet" href="styles/css/global.css">
+        <link rel="stylesheet" href="styles/css/navbar.css">
+        <link rel="stylesheet" href="styles/css/home.css">
+        <link rel="stylesheet" href="styles/css/footer.css">
+    </head>
+    <body>
+        <div class="website-container">
+            <nav ng-controller="NavbarController" class="navbar" ></nav>
+            <div ng-view></div>
+            <footer ng-controller="FooterController" class="footer"></footer>
+        </div>
+        <script rel="text/javascript" src="scripts/main.js"></script>
+        <script rel="text/javascript" src="scripts/factories.js"></script>
+        <script rel="text/javascript" src="scripts/controllers.js"></script>
+    </body>
+</html>
