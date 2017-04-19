@@ -1,0 +1,28 @@
+{
+  "name": "angulartemplate",
+  "version": "1.0.0",
+  "description": "Creating a template for angular",
+  "main": "index.js",
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-resource": "^1.6.4",
+    "angular-route": "^1.6.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Hello World\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/littledudz/Angular-Template.git"
+  },
+  "keywords": [
+    "angularjs"
+  ],
+  "author": "Dudley E. Dickerson IV",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/littledudz/Angular-Template/issues"
+  },
+  "homepage": "https://github.com/littledudz/Angular-Template#readme"
+}

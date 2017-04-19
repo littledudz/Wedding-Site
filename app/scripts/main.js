@@ -1,12 +1,12 @@
-var app = angular.module('WebApp', ['ngRoute','ngResource']);
+angular.module('WebApp', ['ngRoute', 'ngResource'])
 
-app.config (['$routeProvider', function ($routeProvider) {
-    $routeProvider
+.config(function($routeProvider) {
+  $routeProvider
     .when('/', {
-        templateUrl: 'snippets/views/home.html',
-        controller: 'HomeViewController'
+      controller:'HomeViewController',
+      templateUrl:'snippets/views/home.html',
     })
-    .otherwise ({
-        redirectTo: '/'
-    })
-}]);
+    .otherwise({
+      redirectTo:'/'
+    });
+});

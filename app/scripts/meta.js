@@ -3,7 +3,7 @@ angular.module("WebApp", ['ngMeta'])
 .config(function ($routeProvider, ngMetaProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'home.html',
+    templateUrl: 'snippets/views/home.html',
     data: {
       meta: {
         'title': 'Home page',
