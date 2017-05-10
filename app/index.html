@@ -25,10 +25,45 @@
     <link rel="stylesheet" href="styles/css/essentials.css">
 </head>
 <body>
-    <div class="website-container">
-        <nav class="navbar"></nav>
-        <div class="container"><ng-view></np-view></div>
-        <footer class="footer"></footer>
+    <div class="websiteContainer">
+        <nav class="navbar">
+            <div class="topNav">
+                <div class="navGraphic"><img src="" alt=""></div>
+                <div class="counterContainer">
+                    <p class="guestCount">Guest Count:</p>
+                    <div class="counter"></div>
+                </div>
+                <div class="navinfo">
+                    <p class="navtext">Have Questions?</p>
+                    <p class="navemail">Email: <p class="email">ddrr@gmail.com</p>
+                </div>
+                <div class="counter"></div>
+            </div>
+            <div class="bottomNav">
+                <div class="bottomNavContainer">
+                    <ul class="navLinksContainer">
+                        <li class="navLinks">More Info</li>
+                        <li class="navLinks">Photos</li>
+                            <ul class="photosDropdown">
+                                <li class="photosDropdownList">Engagement Photos</li>
+                                <li class="photosDropdownList">Wedding Photos</li>
+                            </ul>
+                        <li class="navLinks">Registry</li>
+                            <ul class="registryDropdown">
+                                <li class="registryDropdownList">Bed Bath & Beyond</li>
+                                <li class="registryDropdownList">Target</li>
+                            </ul>
+                        <li class="navLinks">Guest List</li>
+                        <li class="navLinks">About The Couple</li>
+                        <li class="navLinks">RSVP</li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="mainContentContainer"><ng-view></np-view></div>
+        <footer class="footer">
+            <center class="writtenBy">Website designed and developed by Dudley Dickerson with suggestions from my lovely fiancé Rachael Robertson.</center>
+        </footer>
     </div>
 </body>
 </html>
