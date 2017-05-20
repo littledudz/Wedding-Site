@@ -10,10 +10,18 @@
     <meta name="expires" content="never">
     <meta name="distribution" content="global">
     <meta name="locale" content="en_US">
+
+    <!-- Angular --> 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/0.3.9/ngMeta.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <script rel="text/javascript" src="scripts/main.js"></script>
     <script rel="text/javascript" src="scripts/factories.js"></script>
     <script rel="text/javascript" src="scripts/controllers.js"></script>
@@ -30,32 +38,35 @@
             <div class="topNav">
                 <div class="navGraphic"><img src="" alt=""></div>
                 <div class="counterContainer">
-                    <p class="guestCount">Guest Count:</p>
+                    <img class="counterImage" src="support/images/Counter-Heart-Outline">
                     <div class="counter"></div>
                 </div>
-                <div class="navinfo">
-                    <p class="navtext">Have Questions?</p>
-                    <p class="navemail">Email: <p class="email">ddrr@gmail.com</p>
+                <div class="navInfo">
+                    <p class="navText">Have Questions?</p>
+                    <p class="navEmail">Email: <a class="email">ddrr@gmail.com</a></p>
                 </div>
-                <div class="counter"></div>
             </div>
             <div class="bottomNav">
                 <div class="bottomNavContainer">
-                    <ul class="navLinksContainer">
-                        <li class="navLinks">More Info</li>
-                        <li class="navLinks">Photos</li>
-                            <ul class="photosDropdown">
-                                <li class="photosDropdownList">Engagement Photos</li>
-                                <li class="photosDropdownList">Wedding Photos</li>
+                    <ul class="navLinksContainer nav navbar-nav">
+                        <li class="navLinks"><a href="">More Info</a></li>
+                        <li class="navLinks dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Photos <span class="caret"></span></a>
+                            <ul class="dropdownList dropdown-menu">
+                                <li class="dropdownListItems"><a href="#">Engagement Photos</a></li>
+                                <li class="dropdownListItems"><a href="#">Wedding Photos</a></li>
                             </ul>
-                        <li class="navLinks">Registry</li>
-                            <ul class="registryDropdown">
-                                <li class="registryDropdownList">Bed Bath & Beyond</li>
-                                <li class="registryDropdownList">Target</li>
+                        </li>
+                        <li class="navLinks dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry <span class="caret"></span></a>
+                            <ul class="dropdownList dropdown-menu">
+                                <li class="dropdownListItems"><a href="#">Bed Bath & Beyond</a></li>
+                                <li class="dropdownListItems"><a href="#">Target</a></li>
                             </ul>
-                        <li class="navLinks">Guest List</li>
-                        <li class="navLinks">About The Couple</li>
-                        <li class="navLinks">RSVP</li>
+                        </li>
+                        <li class="navLinks"><a href="">Guest List</a></li>
+                        <li class="navLinks"><a href="">About Us</a></li>
+                        <li class="navLinks"><a href="">RSVP</a></li>
                     </ul>
                 </div>
             </div>

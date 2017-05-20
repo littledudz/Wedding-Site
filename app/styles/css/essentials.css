@@ -29,6 +29,10 @@
 * {
     box-sizing: border-box;
 }
+body {
+	width: 100%;
+	margin: 0px 0px 0px 0px;
+}
 div {
     position: relative;
     margin: 0px 0px 0px 0px;
@@ -37,7 +41,6 @@ div {
 p {
 	font-size: 14px;
     line-height: 14px;
-    margin: 5px 0px 5px 0px
 }
 h1,h2,h3,h4,h5,h6 {
     color:#000;
@@ -118,6 +121,15 @@ input {
 	margin: 0px 0px 3px 0px;
 	border: rgba(255,255,255,0) 1px solid;
     border-radius: 5px;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+a:hover {
+	text-decoration: none;
+	color: inherit;
 }
 
 
