@@ -4,14 +4,17 @@
     border: none;
 }
 .topNav {
-    height: 125px;
+    height: 0px;
     background: #7d7e7d;
 }
-.navInfo .navEmail {
-    display: inline-block;
-}
-.navEmail .email {
-    margin-left: 5px;
+.topNav .navGraphic img {
+    max-height: 180px;
+    float: left;
+    position: relative;
+    z-index: 100;
+    top: 10px;
+    left: 34%;
+    right: 50%;
 }
 .topNav .counterContainer {
     float: right;
@@ -20,13 +23,9 @@
 .counterContainer .counterImage {
     max-height: 135px;
 }
-
-
-
 .bottomNav {
-    height: 54px;
+    height: 233px;
     font-weight: 700;
-    border-top: 1px solid #999999;
     border-bottom: 1px solid #999999;
     background: #7d7e7d;
     background: -webkit-linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
@@ -35,7 +34,9 @@
     background: linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
 }
-.navLinksContainer .navLinks {
+.bottomNav .navLinksContainer {
+    width: 62%;
+    margin: 0px 19%;
     display: inline-block;
 }
 .navLinksContainer .navLinks a {
