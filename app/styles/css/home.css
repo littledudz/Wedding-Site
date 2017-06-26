@@ -29,7 +29,7 @@
 
 /*  Info Snippets
 *************************************************/
-.homepageContainer .home-cards {
+.homepageContainer .home-cards, .RSVP {
     position: relative;
     background: #636363;
     width: 100%;
