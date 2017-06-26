@@ -1,0 +1,85 @@
+.aboutUsContainer {
+    /*padding: 20px;*/
+}
+.aboutUsContainer .photos {
+    width: 100%;
+    background-image: url('../../support/images/about-us-background.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: -350px;
+    background-color: #ffffff;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ffffff;
+    
+}
+.aboutUsContainer .max-width {
+    max-width: 1000px;
+    padding: 60px 0px 20px 0px;
+    margin: 0 auto;
+}
+.couple-image, .party-image {
+    position: relative;
+    display: inline-block;
+    float: left;
+    border: 3px solid #ffffff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 2px #000000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+.couple-image:hover, .party-image:hover {
+    border: 3px solid #E60021 !important;
+}
+.couple-image {
+    height: 600px;
+    margin: 20px;
+    cursor: pointer
+}
+.party {
+    width: 100%;
+    margin: 0px 20px;
+}
+.party-image {
+    height: 125px;
+    margin-right: 4.1%;
+}
+.party-image:last-child {
+    margin: 0px;
+}
+.dudley-side {
+    margin-left: -20px;
+}
+#Dudley {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Rachael {
+    background-image: url('../../support/images/portraits/rachael.png');
+}
+#Maggie {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Melia {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Nichole {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Coolie {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Pritchet {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Mitchell {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#James {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Thomas {
+    background-image: url('../../support/images/portraits/dudley.png');
+}
+#Drew {
+    background-image: url('../../support/images/portraits/dudley.png');
+}

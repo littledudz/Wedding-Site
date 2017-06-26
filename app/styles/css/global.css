@@ -26,3 +26,16 @@ li {
 p {
     margin: 0px;
 }
+#pad0 {
+    padding: 0px;
+}
+.row {
+    margin: 0px;
+    padding: 0px;
+}
+.red {
+    background: #E60021;
+}
+.hidden {
+    display: none;
+}

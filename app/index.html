@@ -22,53 +22,70 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+     <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/afb5db4e40.js"></script>
+
+    <script rel="text/javascript" src="scripts/navbar.js"></script>
     <script rel="text/javascript" src="scripts/main.js"></script>
     <script rel="text/javascript" src="scripts/factories.js"></script>
     <script rel="text/javascript" src="scripts/controllers.js"></script>
     <!--<script rel="text/javascript" src="scripts/meta.js"></script>-->
     <link rel="stylesheet" href="styles/css/global.css">
     <link rel="stylesheet" href="styles/css/navbar.css">
-    <link rel="stylesheet" href="styles/css/home.css">
     <link rel="stylesheet" href="styles/css/footer.css">
     <link rel="stylesheet" href="styles/css/essentials.css">
+    <link rel="stylesheet" href="styles/css/home.css">
 </head>
 <body>
     <div class="websiteContainer">
-        <nav class="navbar">
-            <div class="topNav">
-                <div class="navGraphic"><img src="support/images/mr&mrs2.png" alt=""></div>
-                <!--<div class="counterContainer">
-                    <img class="counterImage" src="support/images/Counter-Heart-Outline">
-                    <div class="counter"></div>
-                </div>-->
-            </div>
-            <div class="bottomNav">
-                <div class="bottomNavContainer">
-                    <ul class="navLinksContainer nav navbar-nav">
-                        <li class="navLinks"><a href="">More Info</a></li>
-                        <li class="navLinks"><a href="">RSVP</a></li>
-                        <li class="navLinks dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Photos <span class="caret"></span></a>
-                            <ul class="dropdownList dropdown-menu">
-                                <li class="dropdownListItems"><a href="#">Engagement Photos</a></li>
-                                <li class="dropdownListItems"><a href="#">Wedding Photos</a></li>
-                            </ul>
+        <div class="navigation">
+            <div class="navbar">
+                <nav class="nav-main">
+                    <ul class="nav-list">
+                        <li class="mega-menu"><a ng-click="goToHomeView()">Home</a></li>
+                        <li class="mega-menu"><a href="#" data-toggle="modal" data-target="#RSVP">RSVP</a></li>
+                        <li class="mega-menu"><a href="#">More Info</a></li>
+                        <li class="mega-menu">
+                            <div class="dropdown-container">
+                                <a href="" class="dropbtn">Photos</a>
+                                <ul class="dropdown-content">
+                                    <li><a class="dropdown-text">Engagement</a></li>
+                                    <li><a class="dropdown-text">Wedding</a></li>
+                                    <li><a class="dropdown-text">Honeymoon</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="navLinks dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Registry <span class="caret"></span></a>
-                            <ul class="dropdownList dropdown-menu">
-                                <li class="dropdownListItems"><a href="#">Bed Bath & Beyond</a></li>
-                                <li class="dropdownListItems"><a href="#">Target</a></li>
-                            </ul>
+                        <li class="mega-menu">
+                            <div class="dropdown-container">
+                                <a href="" class="dropbtn">Registry</a>
+                                <ul class="dropdown-content">
+                                    <li><a class="dropdown-text">Bed Bath & Beyond</a></li>
+                                    <li><a class="dropdown-text">Target</a></li>
+                                    <li><a class="dropdown-text">Walmart</a></li>
+                                </ul>
+                            </div>
                         </li>
-                        <li class="navLinks"><a href="">Guest List</a></li>
-                        <li class="navLinks"><a href="">About Us</a></li>
-                        <li class="navLinks"><a href="">Contact Us</a></li>
+                        <li class="mega-menu"><a href="#">Guest List</a></li>
+                        <li class="mega-menu"><a ng-click="goToAboutUs()">About Us</a></li>
+                        <li class="mega-menu"><a href="#">Contact Us</a></li>
                     </ul>
-                </div>
+                </nav>
+                <nav class="nav-menu"> <!--   Mobile Menu    -->
+                    <a class="menu" onclick="toggleDropdown()"><i class="fa fa-bars"></i>Menu</a>
+                    <ul id="menu-toggle" class="sidebar-menu">
+                        <li class="sub-menu"><a href="#">Home</a></li>
+                        <li class="sub-menu"><a href="#">More Info</a></li>
+                        <li class="sub-menu"><a href="#" data-toggle="modal" data-target="#RSVP">RSVP</a></li>
+                        <li class="sub-menu"><a href="#">Photos</a></li>
+                        <li class="sub-menu"><a href="#">Registry</a></li>
+                        <li class="sub-menu"><a href="#">Guest List</a></li>
+                        <li class="sub-menu"><a href="#">About Us</a></li>
+                        <li class="sub-menu"><a href="#">Contact Us</a></li>
+                    </ul> <!-- end .sidebar-menu -->
+                </nav> <!-- end .nav-menu -->
             </div>
-        </nav>
-        <div class="mainContentContainer"><ng-view></np-view></div>
+        </div>
+        <div class="mainContentContainer" ng-view></div>
         <footer class="footer">
             <center class="writtenBy">Website designed and developed by Dudley Dickerson with suggestions from my lovely fiancé Rachael Robertson.</center>
         </footer>
