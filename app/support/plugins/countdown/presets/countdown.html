@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+
+    <style>
+
+        body {
+        
+            background-image:linear-gradient(-45deg, rgba(0, 0, 0, 0), #1f2326 50%), url();
+            background-size:cover;
+            background-position: center bottom;
+            background-color:#1f2326;
+            color:#fff;
+        }
+
+        .tick-text {
+            letter-spacing: .125em;
+            text-shadow: 0 .425em .125em rgba(0,0,0,.25);
+        }
+
+        .tick-label {
+            color:#474f54;
+        }
+
+        .tick-value {
+            text-shadow: 0 .25em .0625em rgba(0,0,0,.25);
+        }
+        
+        .tick {
+            width:100%;
+            box-sizing:border-box;
+        }
+
+        /* start from small screens */
+        .tick {
+            padding:0 .5em;
+        }
+
+        .tick-value {
+            font-size:1em;
+        }
+
+        .tick-label {
+            font-size:.5em;
+        }
+
+        /* define sizes for bigger screens */
+        @media (min-width:25em) {
+
+            .tick-value {
+                font-size:1.5em;
+            }
+
+            .tick-label {
+                font-size:.75em;
+            }
+
+        }
+        
+        @media (min-width:32em) {
+
+            .tick {
+                padding:0 2em;
+            }
+
+            .tick-value {
+                font-size:2em;
+            }
+
+            .tick-label {
+                font-size:1em;
+            }
+
+        }
+        
+    </style>
+
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal fill pad"
+             data-repeat="true"
+             data-transform="
+                 rotate(
+                    transform(
+                      plural(day, days),
+                      fraction(0, 365),
+                      input()
+                    ),
+                    transform(
+                      plural(hour, hours),
+                      fraction(0, 24),
+                      input()
+                    ),
+                    transform(
+                      plural(minute, minutes),
+                      fraction(0, 60),
+                      input()
+                    ),
+                    transform(
+                      plural(second, seconds),
+                      fraction(0, 60),
+                      input()
+                    )
+                 ) ->
+                 map( keys( label, progress, value ) )">
+
+            <div class="tick-group" data-layout="overlay">
+
+                <div data-overlay="center">
+                    
+                    <div>
+                        
+                        <div class="tick-value"
+                             data-key="value"
+                             data-view="text"
+                             data-transform="pad(00)"></div>
+
+                        <div class="tick-label"
+                             data-key="label"
+                             data-view="text"></div>
+
+                    </div>
+
+                </div>
+
+                <div data-key="progress"
+                     data-view="line"
+                     data-transform="arrive(2.5, 0.1)"
+                     data-style="
+                        shape:circle;
+                        
+                        align:bottom;
+                        cap-style:round;
+                        gap-size:.01; 
+                        flip: true;
+                        
+                        fill-color:#fff; 
+                        fill-width:.25em; 
+                        fill-shadow: 0 .425em .125em rgba(0,0,0,.25);
+                        
+                        rail-color:vertical-gradient(#595f62, #3e474c 50%);
+                        rail-width:.1em; 
+                        rail-shadow: 0 .425em .125em rgba(0,0,0,.25);"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+    function handleTickInit(tick) {
+
+        var nextYear = ((new Date()).getFullYear() + 1) + '-01-01T00:00:00';
+
+        var counter = Tick.count.down(nextYear);
+
+        counter.onupdate = function(value) {
+            tick.value = value;
+        };
+
+    }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

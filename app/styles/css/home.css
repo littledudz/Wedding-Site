@@ -1,5 +1,35 @@
+/*  Globals
+*************************************************/
 .homepageContainer .row {
     margin: 0px
+}
+.RSVP, .info-snippets {
+    z-index: 998;
+    position: relative;
+    float: left;
+    background-color: #636363;
+    width: 100%;
+    height: 150px;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 0 12px #ffffff;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    .info-snippets {
+        height: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    
 }
 
 
@@ -12,31 +42,158 @@
     height: 750px;
     width: 100%;
 }
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
 
 /*  RSVP
 *************************************************/
+.RSVP {
+    /*height: 250px;*/
+}
+.homepageContainer .RSVP form {
+    position: relative;
+    top: -120px;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    background: #252525;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #ffffff;
+    padding: 30px;
+    margin: 0 auto;
+}
+.RSVP .form-header {
+    font-size: 36px;
+    font-weight: 700px;
+    letter-spacing: 0px;
+    line-height: 30px;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    padding: 0px 0px 25px 0px;
+    margin-bottom: 25px;
+}
+.form-label {
+    font-size: 16px;
+    line-height: 16px
+}
+.RSVP input {
+    width: 100%;
+    float: none;
+    color: #ffffff;
+    font-size: 16px;
+    line-height: 16px;
+    background-color: #252525;
+    border-bottom: 2px solid #ffffff;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.RSVP .btn-block {
+    margin: 0 auto;
+}
+.RSVP .form-family {
+    font-size: 24px;
+    line-height: 24px;
+    text-align: center;
+    margin: 20px 0px 10px 0px;
+}
+.RSVP .form-btn {
+    display: inline-block;
+    width: 120px;
+    max-height: 40px;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400px;
+    text-align: center;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+.RSVP .form-btn:hover { 
+    width: 130px;
+}    
+.RSVP #yes-btn {
+    background: #901b1b;
+    font-weight: 700px !important;
+    box-shadow: 0 0 12px #ffffff;
+}
+label {
+    font-size: 16px;
+    font-weight: 400 !important;
+    text-transform: uppercase;
+    margin: 20px 0px 10px -10px
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
 
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
 
 /*  Annabella
 *************************************************/
 .annabella {
-    height: 600px;
+    height: 750px;
     background-image: url('../../support/images/annabella1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
 }
 
 
 /*  Info Snippets
 *************************************************/
-.homepageContainer .home-cards, .RSVP {
+
+.info-container {
+    z-index: 998;
     position: relative;
-    background: #636363;
-    width: 100%;
-    height: 100px;
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    box-shadow: 0 0 12px #ffffff;
+    top: -40px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.info-img {
+    z-index: 999;
+    position: relative;
+    max-width: 425px;
 }
 .cards {
     position: relative;
@@ -79,40 +236,66 @@
     font-size: 30px;
     line-height: 30px;
 }
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+    .info-container {
+        top: 0px;
+    }
+    .info-img {
+        max-width: 320px;
+        padding: 0px;
+    }
+}
 
 
 /*  Engagement Carousel
 *************************************************/
-.carousel-inner .item .slide {
+.carousel-inner .item .engage-slide {
     width: 100%;
     height: 750px;
     background-repeat: no-repeat;
     background-size: cover;
 }
-.first-slide {
+.engage-slide-1 {
     background-image: url('../../support/images/carousel/carousel-creek.jpg');
 }
-.second-slide {
-    background-image: url('../../support/images/carousel/carousel-ring.jpg');
+.engage-slide-2 {
+    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
 }
-.third-slide {
-    background-image: url('../../support/images/carousel/carousel-swing.jpg');
-}
-.fourth-slide {
-    background-image: url('../../support/images/carousel/carousel-tree.jpg');
-}
-.fifth-slide {
+.engage-slide-3 {
     background-image: url('../../support/images/carousel/carousel-hands.jpg');
 }
-.engagement-text {
-    z-index: 50;
-    position: relative;
-    top: 50px;
-    color: white;
-    font-size: 50px;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-    text-shadow: 0px 0px 10px #000000;
+.engage-slide-4 {
+    background-image: url('../../support/images/carousel/carousel-ring.jpg');
+}
+.engage-slide-5 {
+    background-image: url('../../support/images/carousel/carousel-swing.jpg');
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
 }
 
 /*  Counter Arrows
@@ -134,25 +317,142 @@
     height: 400px;
     padding: 20px;
 }
+.counters .counter-inner-square {
+    width: 75%;
+    height: 75%;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 12px #ffffff;
+    margin: 10% auto;
+}
+.counters .rsvp-box {
+    background-color: #636363;
+}
+.counters .countdown-box {
+    background-color: #252525;
+}
 .counters .counter-text {
     font-size: 24px;
     font-family: "Raleway", sans-serif;
     text-align: center;
 }
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
 
-/*  Meet The Crew
-*************************************************/
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
 
+@media (max-width: 425px) {
 
+}
 
 /*  Proposal
 *************************************************/
+.homepageContainer .proposal {
+    height: 600px;
+    background-image: url(http://www.ubackground.com/_ph/12/163308756.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #636363;
+    padding: 55px 0px;
+}
+.proposal .proposal-box {
+    height: 460px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #252525;
+    margin: -480px auto 0px auto;
+    padding: 0px 40px;
+}
+.proposal .proposal-outline {
+    width: 79%;
+    max-width: 840px;
+    height: 500px;
+    border: 20px solid rgba(255, 255, 255, 0.4);
+    opacity: 0.5;
+    padding: 30px;
+    margin: 0 auto;
+}
+.proposal .proposal-slide {
+    width: 100%;
+    height: 480px;
+}
+.proposal .container {
+    position: relative;
+    top: -430px;
+    left: -130px;
+    width: 700px;
+    padding: 0px;
+    margin: 0px;
+}
+.proposal .carousel-caption {
+    width: 100%;
+    height: 100%;
+}
+.proposal .proposal-title {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.proposal .proposal-story {
+    font-size: 18px;
+    line-height: 24px;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
 
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
+
+/*  Meet The Crew
+*************************************************/
+.homepageContainer .meet-the-crew {
+    height: 750px;
+    background-color: #252525;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0 0 12px #ffffff;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
 
 
 /*  Registry
 *************************************************/
-/*#pad0 .homeBoxes .homeBox {
+#pad0 .homeBoxes .homeBox {
     padding: 45px 0px;
     vertical-align: middle;
 }
@@ -163,6 +463,20 @@
 
 #pad0 .homeBoxes .homeBoxLarge {
     padding: 0em;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homeBoxes #annabella-1 {
+    background-image: url('../../support/images/annabella1.jpg');
+}
+.homeBoxes #annabella-2 {
+    background-image: url('../../support/images/annabella2.jpg');
+}
+.homeBoxes #annabella-3 {
+    background-image: url('../../support/images/annabella3.jpg');
+}
+.homeBoxes #annabella-4 {
+    background-image: url('../../support/images/annabella4.jpg');
 }
 .homeBoxes img {
     max-height: 176px;
@@ -183,15 +497,23 @@
 section .row {
     margin: 0px;
 }
+/* Responsive */
+@media (min-width: 992px) {
+    .homeBoxLarge {
+        height: 176px;
+    }
+}    
+
 @media (max-width: 991px) { 
-    #pad0 .homeBoxes .homeBox {
+    #pad0 .homeBoxes .homeBox, .homeBoxLarge {
+        height: 246px;
         padding: 80px 0px;
     }
     .homeBoxes img {
         height: 246px;
     }
 }
-@media (max-width: 767px) { 
+@media (max-width: 768px) { 
     .homeBox .homeBoxTextContainer .fa {
         font-size: 1em;
         margin-bottom: 0px;
@@ -199,13 +521,20 @@ section .row {
     .homeBoxes .homeBoxTextContainer {
         height: 100%;
         border-bottom: 1px solid #ffffff;
-        text-align: left;
         padding: 2em;
     }
     #pad0 .homeBoxes .homeBox {
         padding: 0px;
     }
-}*/
+}
+@media (max-width: 425px) {
+    #pad0 .homeBoxes .homeBox {
+        height: 100%;
+    }
+    .homeBoxes .homeBoxTextContainer {
+        text-align: left;
+    }
+}
 
 
 /*  FAQ
@@ -213,18 +542,18 @@ section .row {
 
 
 
-/*  Responsive
-*************************************************/
-@media (max-width: 767px) { 
-    .card-content {
-        margin: 10px 0px;
-    }
-    .home-cards {
-        padding: 25px 25px;
-    }
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
 }
-@media (max-width: 767px) { 
-    .home-cards {
-        padding: 25px 0px;
-    }
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
 }

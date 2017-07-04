@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poiret+One');
+    </style>
+    <style>
+
+        body {
+            
+            background-image:url();
+            background-size:cover;
+            background-position: center bottom;
+            background-color:#3b3132;
+            color:#fff;
+        }
+        
+        .tick {
+            font-family:'Poiret One', cursive;
+        }
+
+        .tick-group {
+            min-width:8.75em;
+        }
+        
+        .tick-label {
+            position:absolute;
+            top:100%;
+            left:0;
+            right:0;
+            font-size: 1.25em;
+            color: #fff;
+            text-shadow: 0 0 0.125em #fff;
+        }
+
+        .tick-backdrop {
+            font-size: 5em;
+            border-radius: 50%;
+            margin: .13750em;
+            text-align: center;
+            overflow: hidden;
+            line-height:2.25;
+            color: #fff;
+            text-shadow: 0 0 0.06125em #fff;
+        }
+
+        /* start from small screens */
+        .tick {
+            font-size:.65em;
+        }
+        
+        /* define sizes for bigger screens */
+        @media (min-width:25em) {
+
+            .tick {
+                font-size:.85em;
+            }
+            
+        }
+
+        @media (min-width:30em) {
+
+            .tick {
+                font-size:1em;
+            }
+
+        }
+        
+    </style>
+
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal fill pad"
+             data-repeat="true"
+             data-transform="
+                 rotate(
+                    transform(
+                      plural(day, days),
+                      fraction(0, 365),
+                      input()
+                    ),
+                    transform(
+                      plural(hour, hours),
+                      fraction(0, 24),
+                      input()
+                    ),
+                    transform(
+                      plural(minute, minutes),
+                      fraction(0, 60),
+                      input()
+                    ),
+                    transform(
+                      plural(second, seconds),
+                      fraction(0, 60),
+                      input()
+                    )
+                 ) ->
+                 map( keys( label, progress, value ) )">
+
+            <div class="tick-group" data-layout="overlay">
+
+                <div class="tick-label"
+                     data-key="label"
+                     data-view="text"></div>
+                
+                <div data-overlay="stretch" class="tick-backdrop">
+
+                    <div data-key="value"
+                         data-view="text"></div>
+                    
+                </div>
+
+                <div data-key="progress"
+                     data-view="line"
+                     data-transform="tween(1s, ease-in-out-quart)"
+                     data-style="
+                        shape:circle;
+                        
+                        offset:.225;
+                        align:bottom;
+                        cap-style:round;
+                        gap-size:.02;
+                        
+                        fill-color: #fff; 
+                        fill-width: .3em; 
+                        fill-shadow: 0 0 .3125em #fff;
+                        
+                        rail-color: rgba(255,255,255,.1);
+                        rail-width: .25em;"></div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+        function handleTickInit(tick) {
+        
+            // in a month as 12 o clock
+            var now = Tick.helper.date();
+            now.setMonth(now.getMonth() + 1);
+            now.setHours(12);
+            now.setMinutes(0);
+            now.setSeconds(0);
+            now.setMilliseconds(0);
+            
+            var counter = Tick.count.down(now, {
+                format:['d','h','m','s']
+            });
+    
+            counter.onupdate = function(value) {
+                tick.value = value;
+            };
+            
+        }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

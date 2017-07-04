@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Tulpen+One');
+    </style>
+    
+    <style>
+
+        body {
+        }
+
+        .tick-value {
+            font-family: 'Tulpen One', sans-serif;
+            display:block;
+            margin:.75em;
+            font-size:5em;
+            width:1em;
+            height:1em;
+            line-height:1.125;
+        }
+
+        /* start from small screens */
+        .tick {
+            font-size:.5em;
+        }
+
+        /* define sizes for bigger screens */
+        @media (min-width:25em) {
+
+            .tick {
+                font-size:.75em;
+            }
+
+        }
+        
+        @media (min-width:35em) {
+
+            .tick {
+                font-size:1em;
+            }
+
+        }
+        
+    </style>
+
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal fill pad" 
+             data-value-mapping="indexes">
+
+            <div class="tick-group" data-layout="overlay">
+                
+                <div class="tick-value"
+                     data-view="text"></div>
+
+                <div data-overlay="fill"
+                     data-view="line"
+                     data-transform="fraction(0,168)"
+                     data-style="
+                     shape:circle; 
+                     gap-size:.025;
+                     align:bottom;
+                     padding:.25em;
+                     rail-color:#e7e6e5;  
+                     fill-width:.5em;
+                     fill-color:#4ECDC4"></div>
+
+            </div>
+
+            <div class="tick-group" data-layout="overlay">
+
+                <div class="tick-value"
+                     data-view="text"
+                     data-transform="pad(00)"></div>
+
+                <div data-overlay="fill"
+                     data-view="line"
+                     data-transform="fraction(0,60)"
+                     data-style="
+                     shape:circle;
+                     gap-size:.025;
+                     align:bottom;
+                     padding:.25em;
+                     rail-color:#e7e6e5;  
+                     fill-width:.5em;
+                     fill-color:#FFE66D"></div>
+
+            </div>
+
+            <div class="tick-group" data-layout="overlay">
+
+                <div class="tick-value"
+                     data-view="text"
+                     data-transform="pad(00)"></div>
+
+                <div data-overlay="fill"
+                     data-view="line"
+                     data-transform="fraction(0,60)"
+                     data-style="
+                     shape:circle;
+                     gap-size:.025;
+                     rail-color:#e7e6e5;
+                     fill-width:.5em;
+                     align:bottom;
+                     padding:.25em;
+                     fill-color:#FF6B6B"></div>
+
+            </div>
+
+        </div>
+        
+    </div>
+
+    <script>
+		function handleTickInit(tick) {
+
+			var counter = Tick.count.schedule('every wednesday at 12:00', {
+				format:['h','m','s']
+			});
+
+			counter.onupdate = function(value) {
+				tick.value = value;
+			};
+
+		}
+    </script>
+    
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

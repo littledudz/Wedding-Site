@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    <style>
+
+        body {
+            color:#222;
+        }
+
+        .tick {
+            text-align:left;
+            font-size:1.25em;
+        }
+        
+        .tick-value {
+            font-size:1.5em;
+            margin-top:.25em;
+            font-weight:bold;
+            letter-spacing:.05em;
+        }
+        
+        .tick-label {
+            color:#c3bdb4;
+        }
+        
+        .tick-group+.tick-group {
+            text-align:right;
+        }
+
+        .tick-line-rail {
+            background:#F1EEEA;
+            min-height:.5em;
+            margin-top:.5em;
+        }
+
+        .tick-line-fill {
+            background:#2BDE73;
+        }
+        
+        .tick-group+.tick-group {
+            margin-left:2em;
+        }
+        
+    </style>
+
+    <div class="tick"
+         data-value="12850"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal">
+            <div class="tick-group">
+                <span class="tick-label">Donated</span>
+                <div data-repeat="true" data-transform="number -> format(€ $0) -> split">
+                    <span class="tick-value" data-view="text"></span>
+                </div>
+            </div>
+            <div class="tick-group">
+                <span class="tick-label">Completed</span>
+                <div data-view="text" class="tick-value" data-transform="percentage(0,25000) -> round -> format($0 %)"></div>
+            </div>
+        </div>
+        
+        <div data-view="line"
+             data-style="cap-style:round"
+             data-transform="fraction(0,25000) -> arrive"></div>
+
+    </div>
+
+    <script>
+        
+    function handleTickInit(tick) {
+
+        var value = tick.value;
+        var target = 25000;
+        
+        var timer = Tick.helper.interval(function() {
+            
+            // have we reached the donation target yet?
+            if (value < target) {
+                // no, keep going
+                tick.value = Math.min(target, tick.value + 300 + (Math.random() * 400));
+            }
+            else {
+                // yes, stop the timer
+                timer.stop();
+            }
+            
+        }, 3000);
+        
+    }
+    
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

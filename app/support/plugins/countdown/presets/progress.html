@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    
+    <style>
+        
+        body {
+            color:#666;
+            background:#fafafa;
+        }
+
+        .tick-group {
+            font-size:2em;
+        }
+        
+        .tick-line {
+            width:5.5em;
+        }
+        
+        .tick p {
+             font-size:.3825em;
+             margin:0;
+             color:#999;
+             white-space:nowrap;
+         }
+        
+    </style>
+    
+    <div class="tick"
+         data-value="0"
+         data-did-init="handleTickInit">
+
+        <div data-layout="overlay" 
+             class="tick-group">
+
+            <div data-overlay="center" 
+                 data-layout="vertical">
+
+                <div data-view="text"
+                     data-transform="percentage -> round -> format($0%)"></div>
+
+                <p>upload progress</p>
+
+            </div>
+
+            <div data-view="line"
+                 data-transform="fraction(0,100)"
+                 data-style="
+                 shape:circle;
+                 cap-style:round;
+                 gap-size:.0175;
+                 rail-width:.0625em;
+                 fill-width:.25em;
+                 rail-color:#ccc;
+                 fill-color:follow-gradient(#341541, #E2286B 40%, #F2BC65)"></div>
+            
+        </div>
+
+    </div>
+    
+    <script>
+    function handleTickInit(tick) {
+        
+        var line = tick.root.querySelector('[data-view=line]');
+        var style = line.dataset.style;
+        
+        var timer = Tick.helper.interval(function(){
+            
+            var add = Math.random() * .25;
+            if (tick.value + add > 100) {
+                timer.stop();
+                tick.value = 100;
+                
+                tick.root.classList.add('tick-complete');
+                line.dataset.style = style.replace(
+                	'follow-gradient(#341541, #E2286B 40%, #F2BC65)',
+                    'follow-gradient(#425F52, #769280 60%, #68DF95)');
+            }
+            else {
+                tick.value += add;
+            }
+            
+        }, 10);
+        
+    }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

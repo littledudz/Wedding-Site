@@ -1,0 +1,45 @@
+/* These styles are only used to render the preset page, you don't need them on your website */
+
+/* Reset all margins and paddings */
+html, body {
+    margin:0;
+    padding:0;
+    overflow:hidden;
+}
+
+/* Set default system font size and family */
+body {
+    font-size:.875em;
+    font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    "Helvetica Neue",
+    sans-serif;
+}
+
+/* Center ticker for demo purposes */
+body > div {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    /* make div fill entire view */
+    width:100vw;
+    height:100vh;
+}
+
+/* Prevent tick from getting too big */
+.tick {
+    max-width:40em;
+    max-height:40em;
+}
+
+/* Center all text in tick */
+.tick {
+    text-align:center;
+}

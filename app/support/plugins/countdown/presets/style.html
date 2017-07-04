@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+
+    <style>
+
+        body {
+            background: #1da1f2;
+            color: rgba(0,0,0,.5);
+        }
+
+        .tick-group {
+            width:calc(100% - .5em);
+            text-align:right;
+        }
+
+        .tick-value {
+            margin-right: .25em;
+            font-size:2em;
+            color: rgba(0,0,0,.5);
+        }
+        
+        .tick-label {
+            font-size: 1em;
+            color: rgba(0,0,0,.45);
+            text-transform: lowercase;
+        }
+        
+        .tick-line {
+            width:12em;
+        }
+
+        /* start from small screens */
+        .tick {
+            font-size:.5em;
+        }
+
+        /* define sizes for bigger screens */
+        @media (min-width:32em) {
+
+            .tick {
+                font-size:.75em;
+            }
+
+        }
+        
+        @media (min-width:46em) {
+
+            .tick {
+                font-size:1em;
+            }
+
+        }
+    </style>
+
+    <div class="tick"
+         data-value="followers:3025, year:2017"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal fill pad"
+             data-repeat="true"
+             data-transform="
+                 rotate(
+                    transform(
+                      plural(Dia, Dias),
+                      fraction(0, 365),
+                      input()
+                    ),
+                    transform(
+                      plural(Hora, Horas),
+                      fraction(0, 24),
+                      input()
+                    ),
+                    transform(
+                      plural(Minuto, Minutos),
+                      fraction(0, 60),
+                      input()
+                    ),
+                    transform(
+                      plural(Segundo, Segundos),
+                      fraction(0, 60),
+                      input()
+                    )
+                 ) ->
+                 map( keys( label, progress, value ) )">
+
+            <div class="tick-group" data-layout="overlay">
+
+                <div data-overlay="center">
+
+                    <div class="tick-group">
+
+                        <span class="tick-value"
+                              data-key="value"
+                              data-view="text"></span>
+
+                        <span class="tick-label"
+                              data-key="label"
+                              data-view="text"></span>
+
+                    </div>
+
+                </div>
+
+                <div data-key="progress"
+                     data-transform="arrive"
+                     data-view="line"
+                     data-style="
+                        shape:circle;
+                        
+                        offset:.30;
+                        length:.93;
+                        align:bottom;
+                        cap-style:round;
+                        gap-size:.02;
+                        flip: true;
+                        
+                        fill-color: rgba(0,0,0,.5);
+                        fill-width: .3125em;
+                        fill-shadow: .25em .5em .3125em rgba(0,0,0,.15);
+                        
+                        rail-color: rgba(0,0,0,.35);
+                        rail-width: .1em;
+                        rail-shadow: .25em .5em .2em rgba(0,0,0,.3);"></div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function handleTickInit(tick) {
+
+			var nextYear = ((new Date()).getFullYear() + 1) + '-01-01T00:00:00';
+
+			var counter = Tick.count.down(nextYear);
+
+			counter.onupdate = function(value) {
+				tick.value = value;
+			};
+
+		}
+    </script>
+    
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

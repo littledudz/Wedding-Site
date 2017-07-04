@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Unica+One');
+    </style>
+    <style>
+
+        body {
+            background-color:#81C784;
+            color:#334e34;
+        }
+
+        .tick {
+            min-width:20em;
+        }
+        
+        .tick-group {
+            margin-left:1em;
+        }
+
+        [data-view] {
+            font-size:4em;
+            font-family:'Unica One', monospace;
+        }
+        
+        button {
+            margin:2em .5em 0;
+            border-radius:9999px;
+            padding:.5em 1em;
+            font-size:inherit;
+            color:#334e34;
+            border:2px solid #334e34;
+            text-decoration:none;
+            box-shadow: inset 0 0.0625em 0 rgba(255,255,255,.25);
+            background-color:transparent;
+            background-image:linear-gradient(150deg,rgba(255,255,255, 0) 20%,rgba(255, 255, 255, .05));
+        }
+
+    </style>
+
+    <div class="tick" 
+         data-value="0"
+         data-did-init="handleTickInit">
+        
+        <div data-layout="overlay">
+
+            <div data-overlay="center">
+                
+                <div data-layout="horizontal center" data-value-mapping="indexes">
+                    <div class="tick-group">
+                        <span data-view="text"></span>
+                        m
+                    </div>
+                    <div class="tick-group">
+                        <span data-view="text" data-transform="pad(00)"></span>
+                        s
+                    </div>
+                    <div class="tick-group">
+                        <span data-view="text" data-transform="pad(000) -> substring(0,2)"></span>
+                        ms
+                    </div>
+                </div>
+                
+            </div>
+
+            <div data-key="2"
+                 data-view="line"
+                 data-style="shape:circle; rail-color:#77bf7a; fill-color:#334e34; fill-width:.06125em; rail-width:.06125em;"
+                 data-transform="fraction(0,1000)"></div>
+
+        </div>
+
+    </div>
+    
+    <div>
+        <button type="button" data-action="start">start</button>
+    
+        <button type="button" data-action="stop" style="display:none;">stop</button>
+    
+        <button type="button" data-action="reset">reset</button>
+    </div>
+    
+    <script>
+        function handleTickInit(tick) {
+    
+            var timer = Tick.helper.interval(function(passed) {
+                    tick.value = Tick.helper.duration(passed, ['m', 's', 'ms']);
+                },
+                16,
+                { autostart:false }
+            );
+            
+            var buttonStart = document.querySelector('[data-action=start]');
+            var buttonStop = document.querySelector('[data-action=stop]');
+            var buttonReset = document.querySelector('[data-action=reset]');
+
+            buttonStart.addEventListener('click', function() {
+                
+                timer.start();
+                
+                // show stop button
+                buttonStop.style.display = '';
+
+                // hide start button
+                buttonStart.style.display = 'none';
+            });
+
+            buttonStop.addEventListener('click', function() {
+                
+                timer.pause();
+                
+                // hide stop button
+                buttonStop.style.display = 'none';
+                
+                // show start button
+                buttonStart.style.display = '';
+                
+            });
+
+            buttonReset.addEventListener('click', function() {
+                
+                timer.reset();
+
+                // show stop button
+                buttonStop.style.display = '';
+    
+                // hide start button
+                buttonStart.style.display = 'none';
+                
+            })
+        }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

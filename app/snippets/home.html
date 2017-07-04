@@ -1,79 +1,50 @@
 <div class="homepageContainer">
 
-    <!-- Top Photo -->
+    <!-- Top Photo 
+    ======================================================================== -->
     <section class="top-photo">
-        <p class="married-text col-md-12">We are getting married!</p>
+        <!--<p class="married-text col-md-12">We are getting married!</p>-->
     </section>
 
 
-    <!-- RSVP -->
-    <section class="RSVP"></section>
+    <!-- RSVP
+    ======================================================================== -->
+    <section class="RSVP">
+        <form action="" class="row">
+            <p class="form-header">RSVP Now!</p>
+            <!--<p class="form-label col-md-4 col-sm-12" for="name">Name of Family:</p>-->
+            <input class="col-md-12 col-sm-12" name="name" type="text" placeholder="Name (Individual or Family)" required>
+            <!--<p class="form-label col-md-4 col-sm-12" for="guests">Number of Guests Coming:</p>-->
+            <input class="col-md-12 col-sm-12" name="guests" type="number" placeholder="Number of Guests" required>
+            <p class="form-family col-md-12">Will Your Family Be There?</p>
+            <div class="btn-block" align="center">
+                <div class="form-btn" id="yes-btn" ng-click="">YES</div>
+                <div class="form-btn" id="no-btn" ng-click="">NO</div>
+            </div>
+        </form>
+    </section>
 
 
-    <!-- Annabella Photo -->
+    <!-- Annabella Photo
+    ======================================================================== -->
     <section class="annabella"></section>
 
 
-    <!-- Info Snippets -->
-    <section class="home-cards row">
-        <div class="cards col-md-4 col-xs-12">
-            <div class="card-content">
-                <div class="card-text">
-                    <div class="card-info">
-                        <i class="fa fa-calendar"></i><br>
-                        <p>The Date:</p><br>
-                        <p>June 8, 2018</p>
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fa fa-clock-o"></i><br>
-                        <p>The Time:</p><br>
-                        <p>5:30pm</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cards col-md-4 col-xs-12">
-            <div class="card-content">
-                <div class="card-text">
-                    <div class="card-info">
-                        <i class="fa fa-home"></i><br>
-                        <p>The Venue:</p><br>
-                        <p>Annabella at</p><br>
-                        <p style="margin-top: -15px;">Cedar Glen</p>
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fa fa-map-marker"></i><br>
-                        <p>The Area:</p><br>
-                        <p>Huntsville, AL</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="cards col-md-4 col-xs-12">
-            <div class="card-content">
-                <div class="card-text">
-                    <div class="card-info">
-                        <i class="fa fa-user-secret"></i><br>
-                        <p>The Dress:</p><br>
-                        <p>Semi-formal</p>
-                    </div>
-                    <hr>
-                    <div class="card-info">
-                        <i class="fa fa-envelope"></i><br>
-                        <p>Please</p><br>
-                        <p>RSVP</p>
-                    </div>
-                </div> 
-            </div>
+    <!-- Info Snippets
+    ======================================================================== -->
+    <section class="info-snippets row">
+        <div class="info-container" align="center">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
         </div>
     </section>
 
 
-    <!-- Engagement Carousel -->
+    <!-- Engagement Carousel
+    ======================================================================== -->
     <section class="engagement-carousel">
-        <!--<p class="engagement-text">Engagement Photos</p>-->
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <script> $('.carousel').carousel({ interval: 100 }) </script>
             <ol class="carousel-indicators">
@@ -85,23 +56,23 @@
             </ol>
             <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                    <div class="slide first-slide" alt="First slide"></div>
+                    <div class="engage-slide first-slide engage-slide-1" alt="First slide"></div>
                     <div class="container"><div class="carousel-caption"></div></div>
                 </div>
                 <div class="item">
-                    <div class="slide second-slide" alt="Second slide"></div>
+                    <div class="engage-slide second-slide engage-slide-2" alt="Second slide"></div>
                     <div class="container"><div class="carousel-caption"></div></div>
                 </div>
                 <div class="item">
-                    <div class="slide third-slide" alt="Third slide"></div>
+                    <div class="engage-slide third-slide engage-slide-3" alt="Third slide"></div>
                     <div class="container"><div class="carousel-caption"></div></div>
                 </div>
                 <div class="item">
-                    <div class="slide fourth-slide" alt="Fourth slide"></div>
+                    <div class="engage-slide fourth-slide engage-slide-4" alt="Fourth slide"></div>
                     <div class="container"><div class="carousel-caption"></div></div>
                 </div>
                 <div class="item">
-                    <div class="slide fourth-slide" alt="Fifth slide"></div>
+                    <div class="engage-slide fourth-slide engage-slide-5" alt="Fifth slide"></div>
                     <div class="container"><div class="carousel-caption"></div></div>
                 </div>
             </div>
@@ -109,20 +80,192 @@
     </section>
     
 
-    <!-- Counter Arrows -->
+    <!-- Counter Arrows
+    ======================================================================== -->
     <section class="counters row">
         <div class="rsvp-container col-md-6">
-            <div class="counter"></div>
-            <p class="counter-text">People coming so far!</p>
+            <div class="counter-inner-square rsvp-box">
+                <div class="counter"></div>
+                <p class="counter-text">People coming so far!</p>
+            </div>
         </div>
         <div class="countdown-container col-md-6">
-            <div class="timer"></div>
-            <p class="counter-text">Until the big day!</p>
+            <div class="counter-inner-square countdown-box">
+                <div class="timer">
+                    <div>
+                        <style>
+
+                            .tick {
+                                margin-bottom:3em;
+                            }
+
+                            .tick-group {
+                                position:relative;
+                            }
+
+                            .tick-line-rail {
+                                width:3px;
+                                height:6em;
+                                background-color: rgba(0, 0, 0, 0.1);
+                            }
+
+                            .tick-line-fill {
+                                background-color: rgba(0, 0, 0, 0.5);
+                            }
+                            
+                            .tick-text[data-key='label'] {
+                                position:absolute;
+                                color: rgba(0, 0, 0, 0.25);
+                                text-transform: uppercase;
+                                transform-origin: left bottom;
+                                transform: rotateZ(90deg);
+                                letter-spacing: .25em;
+                                bottom: 75%;
+                                left: 100%;
+                                margin-left: .875em;
+                            }
+
+                            .tick-line {
+                                position:absolute;
+                            }
+
+                            /* start from small screens */
+                            .tick-text[data-key='value'] {
+                                font-size:1.5em;
+                                min-width:1.35em;
+                                text-align:center;
+                                margin-left:-.25em;
+                                margin-right:-.25em;
+                            }
+
+                            .tick-group {
+                                margin-right:3.5em;
+                            }
+
+                            .tick-line {
+                                right: -0.85em;
+                                top: .5em;
+                            }
+                            
+                            @media (min-width:30em) {
+
+                                .tick-text[data-key='value'] {
+                                    font-size:3em;
+                                    margin-left:0;
+                                    margin-right:0;
+                                }
+
+                                .tick-line {
+                                    right: -0.6em;
+                                    top: 1.125em;
+                                }
+
+                                .tick-group {
+                                    margin-right:3em;
+                                }
+
+                            }
+                        </style>
+
+                        <div class="tick" data-did-init="handleTickInit">
+                            <div data-layout="horizontal center" 
+                                 data-repeat="true" 
+                                 data-transform="
+                                    rotate(
+                                        transform(
+                                        value(days),
+                                        fraction(0,365),
+                                        input() -> pad(00)
+                                        ),
+                                        transform(
+                                        value(hours),
+                                        fraction(0,24),
+                                        input() -> pad(00)
+                                        ),
+                                        transform(
+                                        value(minutes),
+                                        fraction(0,60),
+                                        input() -> pad(00)
+                                        ),
+                                        transform(
+                                        value(seconds),
+                                        fraction(0,60),
+                                        input() -> pad(00)
+                                        )
+                                    ) ->
+                                    map( keys( label, progress, value ) )">
+                                <div class="tick-group">
+                                    <div data-key="value" data-view="text"></div>
+                                    <div data-key="label" data-view="text"></div>
+                                    <div data-key="progress" data-view="line" data-transform="tween(750ms, ease-out-back)" data-style="orientation:vertical; flip:true"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <script>
+                            function handleTickInit(tick) {
+                        
+                                var counter = Tick.count.schedule('every first day of november at 12:00', {
+                                    format:['d','h','m','s']
+                                });
+                        
+                                counter.onupdate = function(value) {
+                                    tick.value = value
+                                };
+                        
+                            }
+                        </script>
+
+                        
+
+                    </div>
+                </div>
+                <p class="counter-text">Until the big day!</p>
+            </div>
         </div>
     </section>
 
 
-    <!-- Meet The Crew -->
+    <!-- Proposal======================================================================== -->
+    <section class="proposal">
+        <div class="proposal-outline"></div>
+        <div class="proposal-box">
+            <!--<p class="proposal-title">The Proposal</p>-->
+            <div class="proposal-body">
+                <div id="proposalCarousel" class="proposal-carousel slide" data-ride="carousel">
+                    <script> $('.proposal-carousel').carousel({ interval: 100000 }) </script>
+                    <ol class="carousel-indicators">
+                        <li data-target="#proposalCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#proposalCarousel" data-slide-to="1" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="proposal-slide first-slide proposal-slide-1" alt="First slide"></div>
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="proposal-title">The Proposal - His Perspective</p>
+                                    <p class="proposal-story">The day of the proposal was a normal, but really happy day for us. We goofed around, walked around Berry's campus, and had a great day. While talking at Rachael's dorm room, I initiated a re-occuring, sweet inside joke between us. She used to wear a purity ring on her ring finger, and I used to take a look at it and say: "I really want a different ring on that finger". After I intiated that conversation that night, it just felt so right to be talking about marraige, and I felt deep in my heart that this is who I wanted to spend my life with, for like the hundredth time. So, I asked her if she could help me with something, and when we were in the middle of her dorm room, I asked her I she would help me to put a different, shinier ring on her finger. More importantly though, if she would like to be my wife.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="proposal-slide second-slide proposal-slide-1" alt="Second slide"></div>
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="proposal-title">The Proposal - Her Perspective</p>
+                                    <p class="proposal-story">I was not expecting a proposal at all on that particular day. I knew it was coming sometime. I knew he had a ring and a plan, and I had been trying to get him to give me hints for months! But on that weekend, when he came to visit me at Berry, I was under the impression that the ring was being sized at a jeweler somewhere. We had had a wonderful time together that day, and that evening we were hanging out in my dorm room when somehow we got back on the topic of how much we wanted to marry each other. Before I knew it, he was down on one knee and popping the question! I couldn't have been happier or more surprised!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Meet The Crew
+    ======================================================================== -->
     <section class="meet-the-crew row">
         <div class="meet-the-couple col-md-12">
             <div class="row">
@@ -142,21 +285,16 @@
     </section>
 
 
-    <!-- Proposal -->
-    <section class="proposal">
-
-    </section>
-
-
-    <!-- Registry -->
-    <!--<section>
+    <!-- Registry
+    ======================================================================== -->
+    <section>
         <div class="row" id="pad0">
             <div class="col-md-6" id="pad0">
             <div class="row homeBoxes">
-                <div class="col-xs-12 col-sm-4 homeBox red"><p class="homeBoxTextContainer"><i class="fa fa-calendar"></i><br class="hidden-xs"> The Date: <br class="hidden-xs">June 8, 2018</p></div>
-                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge"><img src="support/images/annabella12.jpg" class="img-responsive" alt=""></div>
+                <div class="col-xs-12 col-sm-4 homeBox red"><a class="homeBoxTextContainer"><i class="fa fa-calendar"></i><br class="hidden-xs"> Registered at: <br class="hidden-xs"> Bed, Bath</a></div>
+                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge" id="annabella-1"></div>
                 <div class="clearfix"></div>
-                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge"><img src="https://wedding-assets.s3.amazonaws.com/uploads/cache/venue/b93dde4c0cc605620369179587b9fd15-7a50e0264f7a045d37edd140bf453cb7-940x626.jpg" class="img-responsive" alt=""></div>
+                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge" id="annabella-2"></div>
                 <div class="clearfix visible-xs"></div>
                 <div class="col-xs-12 col-sm-4 homeBox"><p class="homeBoxTextContainer"><i class="fa fa-clock-o"></i><br class="hidden-xs"> The Time: <br class="hidden-xs">5:30pm</p></div>
             </div>
@@ -165,9 +303,9 @@
             <div class="row homeBoxes">
                 <div class="col-xs-12 col-sm-4 homeBox red"><p class="homeBoxTextContainer"><i class="fa fa-home"></i><br class="hidden-xs"> The Venue: <br class="hidden-xs">Annabella</p></div>
                 <div class="col-xs-12 col-sm-4 homeBox"><p class="homeBoxTextContainer"><i class="fa fa-user-secret"></i><br class="hidden-xs"> The Dress: <br class="hidden-xs">Semi-Formal</p></div>
-                <div class="col-sm-4 hidden-xs homeBoxLarge"><img src="http://annabellaweddings.com/wp-content/uploads/2014/11/annabella9-257x200.jpg" class="img-responsive" alt=""></div>
+                <div class="col-sm-4 hidden-xs homeBoxLarge" id="annabella-3"></div>
                 <div class="clearfix"></div>
-                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge"><img src="https://wwcdn.weddingwire.com/vendor/25001_30000/27881/thumbnails/800x800_1365114947063-annabella-bridge2.jpg" class="img-responsive" alt=""></a></div>
+                <div class="col-xs-12 col-sm-8 hidden-xs homeBoxLarge" id="annabella-4"></div>
                 <div class="clearfix visible-xs"></div>
                 <div class="col-xs-12 col-sm-4 homeBox red"><p class="homeBoxTextContainer"><i class="fa fa-envelope"></i><br class="hidden-xs"> Please <br class="hidden-xs">RSVP</p></div>       
                 <div class="clearfix"></div>
@@ -175,10 +313,11 @@
             </div>
             </div>
         </div>    
-    </section>-->
+    </section>
 
 
-    <!-- FAQ -->
+    <!-- FAQ
+    ======================================================================== -->
     <section class="faqs"></section>
 
 

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+
+    <style>
+
+        .tick {
+            margin-bottom:3em;
+        }
+
+        .tick-group {
+            position:relative;
+        }
+
+        .tick-line-rail {
+            width:3px;
+            height:6em;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .tick-line-fill {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        
+        .tick-text[data-key='label'] {
+            position:absolute;
+            color: rgba(0, 0, 0, 0.25);
+            text-transform: uppercase;
+            transform-origin: left bottom;
+            transform: rotateZ(90deg);
+            letter-spacing: .25em;
+            bottom: 75%;
+            left: 100%;
+            margin-left: .875em;
+        }
+
+        .tick-line {
+            position:absolute;
+        }
+
+        /* start from small screens */
+        .tick-text[data-key='value'] {
+            font-size:1.5em;
+            min-width:1.35em;
+            text-align:center;
+            margin-left:-.25em;
+            margin-right:-.25em;
+        }
+
+        .tick-group {
+            margin-right:3.5em;
+        }
+
+        .tick-line {
+            right: -0.85em;
+            top: .5em;
+        }
+        
+        /* define sizes for bigger screens */
+        @media (min-width:30em) {
+
+            .tick-text[data-key='value'] {
+                font-size:3em;
+                margin-left:0;
+                margin-right:0;
+            }
+
+            .tick-line {
+                right: -0.6em;
+                top: 1.125em;
+            }
+
+            .tick-group {
+                margin-right:3em;
+            }
+
+        }
+    </style>
+
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div data-layout="horizontal center"
+             data-repeat="true"
+             data-transform="
+                 rotate(
+                    transform(
+                      value(days),
+                      fraction(0,365),
+                      input() -> pad(00)
+                    ),
+                    transform(
+                      value(hours),
+                      fraction(0,24),
+                      input() -> pad(00)
+                    ),
+                    transform(
+                      value(minutes),
+                      fraction(0,60),
+                      input() -> pad(00)
+                    ),
+                    transform(
+                      value(seconds),
+                      fraction(0,60),
+                      input() -> pad(00)
+                    )
+                 ) ->
+                 map( keys( label, progress, value ) )">
+
+            <div class="tick-group">
+
+                <div data-key="value"
+                     data-view="text"></div>
+
+                <div data-key="label"
+                     data-view="text"></div>
+
+                <div data-key="progress"
+                     data-view="line" 
+                     data-transform="tween(750ms, ease-out-back)"
+                     data-style="orientation:vertical; flip:true"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        function handleTickInit(tick) {
+    
+            var counter = Tick.count.schedule('every first day of november at 12:00', {
+                format:['d','h','m','s']
+            });
+    
+            counter.onupdate = function(value) {
+                tick.value = value
+            };
+    
+        }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

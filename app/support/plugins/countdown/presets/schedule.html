@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+    
+    <style>
+        
+        body {
+            background:#75c1f7;
+            color:#fff;
+        }
+
+        [data-key='value'] {
+            font-size:3.5em;
+            line-height:1;
+        }
+
+        .tick {
+            position:relative;
+        }
+
+        .tick-group {
+            overflow:hidden;
+        }
+
+        [data-key='label'] {
+            margin-left:1em;
+            margin-right:1em;
+            color:#317fb7;
+        }
+
+        [data-key='total'] {
+            position:absolute;
+            left:0;
+            bottom:0;
+            right:0;
+            top:-1em;
+        }
+
+        .tick-line-rail {
+            display:block;
+            background:transparent;
+            height:100%;
+            transform: perspective(40em) rotateX(40deg);
+            transform-origin: bottom;
+            border-top:2px solid #66b3ea;
+        }
+
+        .tick-line-fill {
+            display:block;
+            background:#66b3ea;
+        }
+
+        .tick-panel {
+            position:relative;
+            padding:.5em .5em 0;
+        }
+        
+        .tick-text {
+            min-width:1.35em;
+            text-align:right;
+        }
+        
+        /* reflection */
+        .tick-reflection {
+            transform:rotateX(-180deg);
+            opacity:.35;
+        }
+
+        .tick-reflection::after {
+            content:'';
+            position:absolute;
+            z-index:1;
+            left:0;
+            right:0;
+            bottom:0;
+            top:0;
+            background:linear-gradient(rgba(117, 193, 247, 1), rgba(117, 193, 247, 0));
+        }
+        
+    </style>
+    
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div class="tick-panel">
+                
+            <div data-key="total"
+                 data-view="line"
+                 data-style="orientation:vertical"></div>
+            
+            <div data-key="time"
+                 data-layout="horizontal center"
+                 data-repeat="true"
+                 data-transform="
+                     rotate(
+                        transform(
+                          plural(minute, minutes),
+                          input()
+                        ),
+                        transform(
+                          plural(second, seconds),
+                          input() -> pad(00)
+                        )
+                     ) ->
+                     map( keys( label, value ) )">
+    
+                <div class="tick-group" data-layout="horizontal baseline">
+    
+                    <span data-key="value" data-view="text"></span>
+    
+                    <span data-key="label" data-view="text"></span>
+    
+                </div>
+    
+            </div>
+                
+        </div>
+
+        <!-- reflection -->
+        <div class="tick-panel tick-reflection">
+
+            <div data-key="total"
+                 data-view="line"
+                 data-style="orientation:vertical"></div>
+
+            <div data-key="time"
+                 data-layout="horizontal center"
+                 data-repeat="true"
+                 data-transform="
+                     rotate(
+                        transform(
+                          plural(minute, minutes),
+                          input()
+                        ),
+                        transform(
+                          plural(second, seconds),
+                          input() -> pad(00)
+                        )
+                     ) ->
+                     map( keys( label, value ) )">
+
+                <div class="tick-group" data-layout="horizontal baseline">
+
+                    <span data-key="value" data-view="text"></span>
+
+                    <span data-key="label" data-view="text"></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <script>
+    function handleTickInit(tick) {
+        
+        var counter = Tick.count.schedule('every 90 seconds', {
+            format:['m','s']
+        });
+        
+        counter.onupdate = function(value) {
+            // total seconds 
+            var total = ((value[0] * 60) + (value[1])) / 90;
+            tick.value = {
+                total: total,
+                time: value
+            };
+        };
+
+    }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>

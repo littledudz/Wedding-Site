@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Tick</title>
+
+    <style>
+
+        html {
+            -webkit-font-smoothing: antialiased;
+            background:#fff;
+            color:#61564E;
+            font-family: -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Oxygen-Sans,
+                Ubuntu,
+                Cantarell,
+                "Helvetica Neue",
+                sans-serif;
+            font-size:1em;
+        }
+
+        html, body {
+            margin:0;
+            padding:0;
+        }
+
+        body {
+            line-height:1.4;
+            font-size:1.125rem;
+            font-weight:300;
+        }
+
+        main {
+            padding:2rem 2rem 4rem;
+            max-width:40rem;
+            margin:0 auto;
+        }
+
+        p {
+            max-width:32rem;
+        }
+
+        em {
+            font-style:normal;
+            background: #eee;
+            color:#777;
+            padding:.125em .25em;
+            border-radius:.25em;
+        }
+
+        a {
+            color:#248fff;
+        }
+
+        li {
+            margin-bottom:.25em;
+        }
+
+        h1 {
+            color:#3E3F45;
+        }
+
+        h2 {
+            padding-top:1em;
+            margin:0 0 .75em;
+            font-weight:300;
+            font-size:2em;
+            color:#248fff;
+        }
+
+        h3 {
+            margin:2em 0 .75em;
+            font-weight:300;
+            font-size:1.5em;
+            color:#28bce6;
+        }
+
+        h4 {
+            margin-top:2em;
+            color:#28bce6;
+            font-size:1.25em;
+        }
+
+        code {
+            background: #eee;
+            color:#777;
+            padding:.125em .25em;
+            font-size:.875em;
+            border-radius:.25em;
+            font-family:menlo,monaco,consolas,monospace;
+        }
+
+        h1 {
+
+            display:flex;
+            align-items:baseline;
+            font-weight:400;
+            font-size:2.5em;
+            margin:0;
+        }
+
+        svg {
+            width:2em;
+            margin-right:.3125em;
+            margin-left:-.125em;
+            position:relative;
+            top:.125em;
+        }
+
+        form {
+            background:#e2e5ed;
+            border-radius:1em;
+            padding:2em;
+            color:#3a4153;
+            margin:2em auto;
+            text-align:center;
+        }
+
+        form h2 {
+            font-size:1em;
+            padding: 0;
+            color:#3a4153;
+        }
+
+        form div {
+            display:flex;
+            align-items:baseline;
+            justify-content:center;
+        }
+
+        input, button {
+            padding:.5em 1em;
+            font-size:1em;
+        }
+
+        input {
+            background:#fff;
+            border-radius:.25em 0 0 .25em;
+            margin:0;
+            border:none;
+        }
+
+        button {
+            border-radius:0 .25em .25em 0;
+            background:#49577e;
+            color:#fff;
+            font-weight:bold;
+            border:none;
+        }
+
+        .implicit {
+            position:absolute;
+            left:-10000px;
+            top:auto;
+            width:1px;
+            height:1px;
+            overflow:hidden;
+        }
+
+    </style>
+
+</head>
+<body>
+<main>
+
+    <h1>
+        Line | Tick Counter
+    </h1>
+
+    <p>First of all, thank you so much for purchasing Line!</p>
+<p>I&#39;ve tried to make <a href="http://tickcounterplugin.com/docs">the documentation</a> as extensive as possible. If you have any questions after reading it, <a href="https://codecanyon.net/user/pqina#contact">do let me know</a>. </p>
+<p>If you&#39;ve ran into trouble, I&#39;ve added a <a href="#help">quick help guide</a> below.</p>
+<p><strong>Thanks again for your purchase and have fun!</strong></p>
+<form action="http://pqina.createsend.com/t/d/s/bkrcd/"
+      method="post"
+      id="subForm">
+    <h2>Stay up to date on new releases and upcoming products.</h2>
+    <label for="fieldEmail" class="implicit">Email</label>
+    <div>
+        <input id="fieldEmail" placeholder="E-mail address" name="cm-bkrcd-bkrcd" type="email" required />
+        <button type="submit">Subscribe</button>
+    </div>
+</form>
+
+
+<h2 id="package-contents">Package Contents</h2>
+<ul>
+<li>A <em>line</em> folder containing the library files.</li>
+<li>A <em>presets</em> folder containing ten unique starter presets.</li>
+</ul>
+<p>If you just want to get started and don&#39;t know which files to pick, choose the <em>tick.js</em> file and the <em>tick.css</em> file. This version of Tick will automatically initialise Tick Counters on the website and can be used with the snippets on the demo site. If you use these files you can skip the next few paragraphs and jump to the Setup section.</p>
+<p>The list below shows how the folder are structured. All Tick files are available in different formats. The <em>tick.js</em> file and the <em>tick.css</em> file are the kickstart/global versions of the files below all merged into one.</p>
+<p>Let&#39;s begin with the CSS folder. These are the CSS files you need (again, this is only so if you don&#39;t use the <em>tick.css</em> variant.)</p>
+<ul>
+<li>tick.core.min.css</li>
+<li>tick.view.line.min.css</li>
+</ul>
+<p>Let&#39;s move on to the JavaScript files. Depending on your project you need to pick one of the folders. The names of the folders are mostly self explanatory.</p>
+<ul>
+<li><em>kickstart</em> (will expose Tick on global window scope and automatically start looking for Tick Counters)</li>
+<li><em>jquery</em> (for use with jQuery)</li>
+<li><em>global</em> (will expose Tick on the global window scope)</li>
+<li><em>amd</em> (if you want to use an AMD loader)</li>
+<li><em>commonjs</em> (if you use a tool like Browserify)</li>
+<li><em>module</em> (for use with ES6 projects)</li>
+</ul>
+<p>Each folder contains a tick.core.polyfill.js file which you can use if you want to support IE11.</p>
+<p>So you&#39;ve picked the files matching your project. Now let&#39;s add them to the web page. Note that the load order of the files is relevant. For JavaScript you need to load the core javascript file last. For the CSS files it&#39;s best to load the core CSS file first.</p>
+<p>For CSS that would for example look like this (in the <code>&lt;head&gt;</code> of the document):</p>
+<pre><code>&lt;link href=&quot;/lib/tick.core.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+&lt;link href=&quot;/lib/tick.view.line.min.css&quot; rel=&quot;stylesheet&quot;&gt;
+</code></pre><p>For JavaScript Kickstart that would look something like this (before the closing <code>&lt;/body&gt;</code> tag):</p>
+<pre><code>&lt;script src=&quot;/lib/tick.core.polyfill.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/lib/tick.view.line.global.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><p>If you&#39;ve bought Dots you&#39;ll also have to add the fonts as well.</p>
+<pre><code>&lt;script src=&quot;/lib/tick.font.lowres.global.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;/lib/tick.font.highres.global.min.js&quot;&gt;&lt;/script&gt;
+
+&lt;script src=&quot;/lib/tick.core.kickstart.min.js&quot;&gt;&lt;/script&gt;
+</code></pre><ol>
+<li><p>If your using the <a href="http://tickcounterplugin.com/docs/#api-jquery">Tick Counter jQuery API</a>, know that it will not load counters automatically, you&#39;ll have to parse the DOM for Tick nodes yourself using the following jQuery snippet <code>$(&#39;body&#39;).tick(&#39;parse&#39;)</code>.</p>
+</li>
+<li><p>Again, if you need to support IE11 you&#39;ll have to add <em>tick.core.polyfill.js</em> to your project.</p>
+</li>
+<li><p>If you use the commonjs, module or amd version you&#39;ll have to manually call the <em>Tick.plugin.add</em> method (<a href="http://tickcounterplugin.com/docs/#plugin-add">see documentation</a> for more details) to add plugins to Tick.</p>
+</li>
+</ol>
+<h2 id="setup">Setup</h2>
+<p>To use Tick you have to upload the files we discussed earlier to a folder on your website. For the code snippets below we&#39;ll assume it&#39;s the <em>tick.css</em> and <em>tick.js</em> version and the folder we are uploading to is named <em>line</em>.</p>
+<p>Copy the following HTML snippet in the <code>&lt;head&gt;</code> of your web page.
+<code>&lt;link href=&quot;/line/tick.css&quot; rel=&quot;stylesheet&quot;&gt;</code></p>
+<p>Then copy the following snippet and place it just before the closing <code>&lt;/body&gt;</code> tag.</p>
+<p><code>&lt;script src=&quot;/line/tick.js&quot;&gt;&lt;/script&gt;</code></p>
+<p>Make sure the paths in the above code snippets match the location of the CSS and JS files.</p>
+<p>Presets copy pasted to your website should now function properly.</p>
+<p>Information on how to customize Tick and use the API can be found on the <a href="http://tickcounterplugin.com/docs">product website</a>.</p>
+<h2 id="help">Help</h2>
+<p><span id="help"></p>
+<p>It seems you&#39;ve run into an issue or have a question. Don&#39;t panic, we&#39;re gonna get to the bottom of this!</p>
+<p>First take a moment to look over the Tick FAQ page on CodeCanyon. I try to add the most common problems to the FAQ, so the answer to your question might be in there.</p>
+<p>Try to send me as much information as possible, this makes it a lot easier for me to help you resolve the problem quickly. The following information is super useful.</p>
+<ul>
+<li>What browser are you using to test;</li>
+<li>On what OS are you testing;</li>
+<li>Any screenshots that show the problem;</li>
+<li>A step by step test scenario (what steps can I take to reproduce the problem);</li>
+<li>If you got a public website I can test on that helps as well;</li>
+</ul>
+<p>If the answer to your question is not in the FAQ and you&#39;ve carefully read <a href="http://tickcounterplugin.com/docs">the documentation</a>, contact me via the support tab on the product page and supply me with as much info as possible, I will be more than happy to help you.</p>
+
+
+</main>
+</body>
+</html>

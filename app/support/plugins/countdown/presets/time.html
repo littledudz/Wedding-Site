@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <meta name="description" content="Tick">
+
+    <title>Tick</title>
+
+    <!-- preset page, only needed for demo purposes -->
+    <link rel="stylesheet" href="./preset.css">
+    
+    <!-- load tick styles -->
+    <link rel="stylesheet" href="./tick.css">
+    
+</head>
+<body>
+
+<!-- start of preset snippet -->
+
+<div>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Comfortaa');
+    </style>
+    <style>
+
+        body {
+            background:#0f0d0d;
+            color:#fff;
+        }
+        
+        .tick {
+            min-width: 15em;
+            padding: 8.25em calc(2em + 10px) 0 2em;
+            min-height: 27em;
+            background: url(/media/watch.png) no-repeat;
+            background-size:contain;
+        }
+        
+        .tick-time {
+            text-align: right;
+            position: absolute;
+            right: calc(50% + .75em);
+            line-height: 1.3;
+            top: -.125em;
+            text-shadow: 0 0 .325em #fff;
+        }
+        
+        .tick-text {
+            width: .75em;
+            text-align: center;
+            font-family: 'Comfortaa', sans-serif;
+        }
+
+        /* start from small screens */
+        .tick {
+            
+        }
+
+        /* define sizes for bigger screens */
+        @media (min-width:25em) {
+
+            .tick {
+                
+            }
+            
+        }
+    </style>
+    
+    <div class="tick"
+         data-did-init="handleTickInit">
+
+        <div data-layout="overlay">
+        
+            <div class="tick-time">
+
+                <div data-repeat="true" data-key="hours">
+                    <span data-view="text"></span>
+                </div>
+
+                <div data-repeat="true" data-key="minutes">
+                    <span data-view="text"></span>
+                </div>
+
+                <div data-repeat="true" data-key="seconds">
+                    <span data-view="text"></span>
+                </div>
+
+            </div>
+
+            <div data-key="hours"
+                 data-view="line"
+                 data-transform="fraction(0,24)"
+                 data-style="
+                shape: circle;
+                length: .75;
+                cap-style: round;
+                rail-width: .65em;
+                fill-width: .65em;
+                fill-color: follow-gradient(#fa2a20, #fa358c);
+                rail-color: follow-gradient(#4f162e, #4c1012);"></div>
+
+            <div data-key="minutes"
+                 data-overlay="stretch"
+                 data-transform="fraction(0,60) -> arrive"
+                 data-view="line"
+                 data-style="
+                shape:circle;
+                cap-style:round;
+                padding: 1.25em;
+                length: .75;
+                rail-width:.65em;
+                fill-width:.65em;
+                rail-color:#092101;
+                fill-color:follow-gradient(#41da27, #9ff630)"></div>
+
+            <div data-key="seconds"
+                 data-overlay="stretch"
+                 data-transform="fraction(0,60) -> arrive"
+                 data-view="line"
+                 data-style="
+                shape:circle;
+                cap-style:round;
+                padding: 2.5em;
+                length: .75;
+                rail-width:.65em;
+                fill-width:.65em;
+                rail-color:#011b22;
+                fill-color:follow-gradient(#22b3de, #2af3cf)"></div>
+            
+        </div>
+        
+    </div>
+
+    <script>
+    function handleTickInit(tick) {
+
+        Tick.helper.interval(function(){
+            var d = Tick.helper.date();
+            tick.value = {
+                hours: d.getHours(),
+                minutes: d.getMinutes(),
+                seconds: d.getSeconds()
+            };
+        });
+
+    }
+    </script>
+
+    
+
+</div>
+
+<!-- end of preset snippet -->
+
+<!-- load tick -->
+<script src="./tick.js"></script>
+
+</body>
+</html>
