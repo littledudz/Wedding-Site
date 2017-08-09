@@ -1,4 +1,6 @@
 footer {
+    z-index: 998;
+    position: relative;
     height: 45px;
 }
 center {

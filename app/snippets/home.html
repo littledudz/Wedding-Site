@@ -12,10 +12,9 @@
     <section class="RSVP">
         <form action="" class="row">
             <p class="form-header">RSVP Now!</p>
-            <!--<p class="form-label col-md-4 col-sm-12" for="name">Name of Family:</p>-->
-            <input class="col-md-12 col-sm-12" name="name" type="text" placeholder="Name (Individual or Family)" required>
-            <!--<p class="form-label col-md-4 col-sm-12" for="guests">Number of Guests Coming:</p>-->
-            <input class="col-md-12 col-sm-12" name="guests" type="number" placeholder="Number of Guests" required>
+            <div class="col-md-12 col-sm-12"><input name="name" type="text" placeholder="Name (Individual or Family)" required></div>
+            <div class="col-md-6 col-sm-12"><input name="guests" type="number" placeholder="Number of Guests" required></div>
+            <div class="col-md-6 col-sm-12"><input name="password" type="text" placeholder="Password" required></div>
             <p class="form-family col-md-12">Will Your Family Be There?</p>
             <div class="btn-block" align="center">
                 <div class="form-btn" id="yes-btn" ng-click="">YES</div>
@@ -25,25 +24,9 @@
     </section>
 
 
-    <!-- Annabella Photo
-    ======================================================================== -->
-    <section class="annabella"></section>
-
-
-    <!-- Info Snippets
-    ======================================================================== -->
-    <section class="info-snippets row">
-        <div class="info-container" align="center">
-            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
-            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
-            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
-            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
-        </div>
-    </section>
-
-
     <!-- Engagement Carousel
     ======================================================================== -->
+    <!--<section class="annabella"></section>-->
     <section class="engagement-carousel">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <script> $('.carousel').carousel({ interval: 100 }) </script>
@@ -78,18 +61,91 @@
             </div>
         </div>
     </section>
-    
 
-    <!-- Counter Arrows
+    <!-- Info Snippets
     ======================================================================== -->
-    <section class="counters row">
-        <div class="rsvp-container col-md-6">
-            <div class="counter-inner-square rsvp-box">
-                <div class="counter"></div>
-                <p class="counter-text">People coming so far!</p>
+    <section class="info-snippets row">
+        <div class="info-container" align="center">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-date.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-time.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
+            <img class="info-img col-md-3" src="support/images/info-circles/info-dress.png" alt="">
+        </div>
+    </section>
+
+    <!-- Proposal
+    ========================================================================= -->
+    <section class="proposal">
+        <!--<div class="proposal-outline"></div>-->
+        <div class="proposal-box">
+            <div class="proposal-body">
+                <div id="proposalCarousel" class="proposal-carousel slide" data-ride="carousel">
+                    <script> $('.proposal-carousel').carousel({ interval: 100000 }) </script>
+                    <ol class="carousel-indicators">
+                        <li data-target="#proposalCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#proposalCarousel" data-slide-to="1" class=""></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <div class="proposal-slide first-slide proposal-slide-1" alt="First slide"></div>
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="proposal-title">The Proposal - His Perspective</p>
+                                    <p class="proposal-story">The day of the proposal was a normal, but really happy day for us. We goofed around, walked around Berry's campus, and had a great day. While talking at Rachael's dorm room, I initiated a re-occuring, sweet inside joke between us. She used to wear another ring on her ring finger, and I used to take a look at it and say: "I really want a different ring on that finger". After I intiated that conversation that night, it just felt so right to be talking about marraige, and I felt deep in my heart that this is who I wanted to spend my life with, for like the hundredth time. So, I asked her if she could help me with something, and when we were in the middle of her dorm room, I asked her I she would help me to put a different, shinier ring on her finger. More importantly though, if she would like to be my wife.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="proposal-slide second-slide proposal-slide-1" alt="Second slide"></div>
+                            <div class="container">
+                                <div class="carousel-caption">
+                                    <p class="proposal-title">The Proposal - Her Perspective</p>
+                                    <p class="proposal-story">I was not expecting a proposal at all on that particular day. I knew it was coming sometime. I knew he had a ring and a plan, and I had been trying to get him to give me hints for months! But on that weekend, when he came to visit me at Berry, I was under the impression that the ring was being sized at a jeweler somewhere. We had had a wonderful time together that day, and that evening we were hanging out in my dorm room when somehow we got back on the topic of how much we wanted to marry each other. Before I knew it, he was down on one knee and popping the question! I couldn't have been happier or more surprised!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="countdown-container col-md-6">
+    </section>
+    
+    <!-- Meet The Crew
+    ======================================================================== -->
+    <section class="meet-the-crew row">
+        <div class="bios col-md-12">
+            
+        </div>
+        <div class="crew-overlay col-md-12">
+            <div class="meet-the-couple">
+                <p class="crew-overlay-title">Meet the Couple</p>
+                <div class="overlay-indicator-container"><img src="" alt="" class="overlay-indicator"></div>
+            </div>
+            <div class="meet-the-people">
+                <div class="row">
+                    <div class="bridesmades col-md-6">
+                        
+                    </div>
+                    <div class="groomsmen col-md-6">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Counters
+    ======================================================================== -->
+    <section class="counters row">
+        <div class="rsvp-container col-md-12">
+            <div class="counter-inner-square rsvp-box">
+                <div class="counter-container">
+                    <div class="rsvp-counter">0</div>
+                    <p class="counter-text">People coming so far!</p>
+                </div>
+            </div>
+        </div>
+        <div class="countdown-container col-md-12">
             <div class="counter-inner-square countdown-box">
                 <div class="timer">
                     <div>
@@ -215,72 +271,10 @@
                         
                             }
                         </script>
-
-                        
-
                     </div>
                 </div>
                 <p class="counter-text">Until the big day!</p>
             </div>
-        </div>
-    </section>
-
-
-    <!-- Proposal======================================================================== -->
-    <section class="proposal">
-        <div class="proposal-outline"></div>
-        <div class="proposal-box">
-            <!--<p class="proposal-title">The Proposal</p>-->
-            <div class="proposal-body">
-                <div id="proposalCarousel" class="proposal-carousel slide" data-ride="carousel">
-                    <script> $('.proposal-carousel').carousel({ interval: 100000 }) </script>
-                    <ol class="carousel-indicators">
-                        <li data-target="#proposalCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#proposalCarousel" data-slide-to="1" class=""></li>
-                    </ol>
-                    <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <div class="proposal-slide first-slide proposal-slide-1" alt="First slide"></div>
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <p class="proposal-title">The Proposal - His Perspective</p>
-                                    <p class="proposal-story">The day of the proposal was a normal, but really happy day for us. We goofed around, walked around Berry's campus, and had a great day. While talking at Rachael's dorm room, I initiated a re-occuring, sweet inside joke between us. She used to wear a purity ring on her ring finger, and I used to take a look at it and say: "I really want a different ring on that finger". After I intiated that conversation that night, it just felt so right to be talking about marraige, and I felt deep in my heart that this is who I wanted to spend my life with, for like the hundredth time. So, I asked her if she could help me with something, and when we were in the middle of her dorm room, I asked her I she would help me to put a different, shinier ring on her finger. More importantly though, if she would like to be my wife.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="proposal-slide second-slide proposal-slide-1" alt="Second slide"></div>
-                            <div class="container">
-                                <div class="carousel-caption">
-                                    <p class="proposal-title">The Proposal - Her Perspective</p>
-                                    <p class="proposal-story">I was not expecting a proposal at all on that particular day. I knew it was coming sometime. I knew he had a ring and a plan, and I had been trying to get him to give me hints for months! But on that weekend, when he came to visit me at Berry, I was under the impression that the ring was being sized at a jeweler somewhere. We had had a wonderful time together that day, and that evening we were hanging out in my dorm room when somehow we got back on the topic of how much we wanted to marry each other. Before I knew it, he was down on one knee and popping the question! I couldn't have been happier or more surprised!</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Meet The Crew
-    ======================================================================== -->
-    <section class="meet-the-crew row">
-        <div class="meet-the-couple col-md-12">
-            <div class="row">
-                <div class="col-md-6"></div>
-                <div class="col-md-6"></div>
-            </div>
-        </div>
-        <div class="meet-the-people col-md-12">
-            <div class="row">
-                <div class="bridesmades col-md-6"></div>
-                <div class="groomsmen col-md-6"></div>
-            </div>
-        </div>
-        <div class="bios col-md-12">
-            
         </div>
     </section>
 

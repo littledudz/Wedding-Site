@@ -6,7 +6,6 @@
 .RSVP, .info-snippets {
     z-index: 998;
     position: relative;
-    float: left;
     background-color: #636363;
     width: 100%;
     height: 150px;
@@ -39,6 +38,8 @@
     background-image: url('../../support/images/carousel/carousel-tree.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    /*background-attachment: fixed;*/
+    background-position: center center;
     height: 750px;
     width: 100%;
 }
@@ -51,17 +52,19 @@
     
 }
 @media (max-width: 768px) { 
-    
+    .top-photo {
+        height: 500px;
+    }
 }
 
 @media (max-width: 425px) {
-
+    
 }
 
 /*  RSVP
 *************************************************/
 .RSVP {
-    /*height: 250px;*/
+    float: left;
 }
 .homepageContainer .RSVP form {
     position: relative;
@@ -91,13 +94,13 @@
     line-height: 16px
 }
 .RSVP input {
+    z-index: 998;
+    position: relative;
     width: 100%;
-    float: none;
-    color: #ffffff;
+    color: #000000;
     font-size: 16px;
     line-height: 16px;
-    background-color: #252525;
-    border-bottom: 2px solid #ffffff;
+    border: 3px solid #636363;
     padding: 10px;
     margin-bottom: 15px;
 }
@@ -148,7 +151,9 @@ label {
     
 }
 @media (max-width: 768px) { 
-    
+    .RSVP input {
+        width: 100%;
+    }
 }
 
 @media (max-width: 425px) {
@@ -157,11 +162,52 @@ label {
 
 /*  Annabella
 *************************************************/
-.annabella {
+/*.annabella {
     height: 750px;
     background-image: url('../../support/images/annabella1.jpg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: center center;
+}
+
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}*/
+
+/*  Engagement Carousel
+*************************************************/
+.carousel-inner .item .engage-slide {
+    width: 100%;
+    height: 750px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.engage-slide-1 {
+    background-image: url('../../support/images/carousel/carousel-creek.jpg');
+}
+.engage-slide-2 {
+    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
+}
+.engage-slide-3 {
+    background-image: url('../../support/images/carousel/carousel-hands.jpg');
+}
+.engage-slide-4 {
+    background-image: url('../../support/images/carousel/carousel-ring.jpg');
+}
+.engage-slide-5 {
+    background-image: url('../../support/images/carousel/carousel-swing.jpg');
 }
 /* Responsive*/
 @media (min-width: 992px) {
@@ -176,7 +222,9 @@ label {
 }
 
 @media (max-width: 425px) {
-
+    .carousel-inner .item .engage-slide {
+        height: 500px;
+    }
 }
 
 
@@ -258,119 +306,32 @@ label {
     }
 }
 
-
-/*  Engagement Carousel
-*************************************************/
-.carousel-inner .item .engage-slide {
-    width: 100%;
-    height: 750px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.engage-slide-1 {
-    background-image: url('../../support/images/carousel/carousel-creek.jpg');
-}
-.engage-slide-2 {
-    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
-}
-.engage-slide-3 {
-    background-image: url('../../support/images/carousel/carousel-hands.jpg');
-}
-.engage-slide-4 {
-    background-image: url('../../support/images/carousel/carousel-ring.jpg');
-}
-.engage-slide-5 {
-    background-image: url('../../support/images/carousel/carousel-swing.jpg');
-}
-/* Responsive*/
-@media (min-width: 992px) {
-    
-}    
-
-@media (max-width: 991px) { 
-    
-}
-@media (max-width: 768px) { 
-    
-}
-
-@media (max-width: 425px) {
-
-}
-
-/*  Counter Arrows
-*************************************************/
-.counters {
-    z-index: 100;
-    position: relative;
-    border-top: 2px solid #ffffff;
-    border-bottom: 2px solid #ffffff;
-    box-shadow: 0px 0px 12px #ffffff;
-}
-.counters .rsvp-container {
-    background-color: #252525;
-    height: 400px;
-    padding: 20px;
-}
-.counters .countdown-container {
-    background-color: #636363;
-    height: 400px;
-    padding: 20px;
-}
-.counters .counter-inner-square {
-    width: 75%;
-    height: 75%;
-    border: 2px solid #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 12px #ffffff;
-    margin: 10% auto;
-}
-.counters .rsvp-box {
-    background-color: #636363;
-}
-.counters .countdown-box {
-    background-color: #252525;
-}
-.counters .counter-text {
-    font-size: 24px;
-    font-family: "Raleway", sans-serif;
-    text-align: center;
-}
-/* Responsive*/
-@media (min-width: 992px) {
-    
-}    
-
-@media (max-width: 991px) { 
-    
-}
-@media (max-width: 768px) { 
-    
-}
-
-@media (max-width: 425px) {
-
-}
-
 /*  Proposal
 *************************************************/
 .homepageContainer .proposal {
-    height: 600px;
+    /*height: 600px;*/
     background-image: url(http://www.ubackground.com/_ph/12/163308756.jpg);
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
     background-color: #636363;
-    padding: 55px 0px;
+    padding: 100px 0px;
 }
 .proposal .proposal-box {
-    height: 460px;
+    /*height: 460px;*/
     width: 80%;
     max-width: 800px;
     background-color: #252525;
-    margin: -480px auto 0px auto;
+    margin: 0px auto 0px auto;
     padding: 0px 40px;
+    border: 10px solid rgb(255, 255, 255);
+    border: 10px solid rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
 }
-.proposal .proposal-outline {
+/*.proposal .proposal-outline {
     width: 79%;
     max-width: 840px;
     height: 500px;
@@ -378,10 +339,10 @@ label {
     opacity: 0.5;
     padding: 30px;
     margin: 0 auto;
-}
+}*/
 .proposal .proposal-slide {
     width: 100%;
-    height: 480px;
+    height: 470px;
 }
 .proposal .container {
     position: relative;
@@ -407,6 +368,7 @@ label {
 .proposal .proposal-story {
     font-size: 18px;
     line-height: 24px;
+    text-align: left;
 }
 /* Responsive*/
 @media (min-width: 992px) {
@@ -427,11 +389,104 @@ label {
 /*  Meet The Crew
 *************************************************/
 .homepageContainer .meet-the-crew {
+    position: relative;
+    z-index: 997;
     height: 750px;
-    background-color: #252525;
     border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0 0 12px #ffffff;
+}
+.meet-the-crew .bios {
+    height: 100%;
+    background-color: #252525;
+    padding: 0px;
+}
+.meet-the-crew .crew-overlay {
+    z-index: 500;
+    position: absolute;
+    padding: 0px;
+}
+.meet-the-crew .meet-the-couple {
+    background: #252525;
+    height: 371px;
+    padding: 0px;
+}
+.meet-the-crew .crew-overlay .row {
+    height: 100% !important;
+}
+.meet-the-crew .meet-the-people {
+    height: 375px;
+}
+.meet-the-crew .bridesmades {
+    background: #636363;
+    height: 100%;
+}
+.meet-the-crew .groomsmen {
+    background: #aaa;
+    height: 100%;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
+
+/*  Counters
+*************************************************/
+.counters {
+    z-index: 100;
+    position: relative;
+    border-top: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0px 0px 12px #ffffff;
+}
+.counters .rsvp-container, .counters .countdown-container {
+    padding: 100px 50px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.counters .counter-inner-square {
+    background-color: rgba(0, 0, 0, 0.55);
+    border-radius: 5px;
+    padding: 5% 1%;
+}
+.counters .rsvp-container {
+    background-image: url('../../support/images/carousel/carousel-creek.jpg');
+    border-bottom: 2px solid white;
+}
+.counters .countdown-container {
+    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
+}
+.counters .countdown-box {
+    float: right;
+}
+.counters .counter-container {
+    width: 100%;
+    height: 100%;
+}
+.counters .counter-text {
+    font-size: 24px;
+    line-height: 24px;
+    font-family: "Raleway", sans-serif;
+    text-align: center;
+}
+.counters .rsvp-counter {
+    display: flex;
+    justify-content: center;
+    font-size: 130px;
+    line-height: 130px;
+    padding: 0px 0px 10px 0px;
 }
 /* Responsive*/
 @media (min-width: 992px) {
