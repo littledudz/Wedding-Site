@@ -1,5 +1,9 @@
 /*  Globals
 *************************************************/
+.homepageContainer {
+    max-width: 1400px;
+    margin: 0 auto;
+}
 .homepageContainer .row {
     margin: 0px
 }
@@ -8,11 +12,17 @@
     position: relative;
     background-color: #636363;
     width: 100%;
-    height: 150px;
-    border-top: 2px solid #ffffff;
+    height: 50px;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0 0 12px #ffffff;
 }
+.transition {
+    -webkit-transition: all 500ms linear 100ms;
+    -moz-transition: all 500ms linear 100ms;
+    -o-transition: all 500ms linear 100ms;
+    transition: all 500ms linear 100ms;
+}
+
 /* Responsive*/
 @media (min-width: 992px) {
     
@@ -40,8 +50,10 @@
     background-size: cover;
     /*background-attachment: fixed;*/
     background-position: center center;
-    height: 750px;
+    height: 700px;
     width: 100%;
+    border-bottom: 2px solid white;
+    box-shadow: 0px 0px 12px white;
 }
 /* Responsive*/
 @media (min-width: 992px) {
@@ -64,11 +76,13 @@
 /*  RSVP
 *************************************************/
 .RSVP {
+    height: 0px;
+    border-bottom: 0px; 
     float: left;
 }
 .homepageContainer .RSVP form {
     position: relative;
-    top: -120px;
+    top: -90px;
     width: 90%;
     max-width: 500px;
     position: relative;
@@ -81,7 +95,7 @@
 }
 .RSVP .form-header {
     font-size: 36px;
-    font-weight: 700px;
+    font-weight: 500;
     letter-spacing: 0px;
     line-height: 30px;
     text-align: center;
@@ -162,12 +176,15 @@ label {
 
 /*  Annabella
 *************************************************/
-/*.annabella {
+.annabella {
     height: 750px;
     background-image: url('../../support/images/annabella1.jpg');
+    background-position: center center;
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center center;
+    border-bottom: 2px solid #ffffff;
+    box-shadow: 0px 0px 12px #ffffff;
 }
 
 @media (min-width: 992px) {
@@ -183,7 +200,7 @@ label {
 
 @media (max-width: 425px) {
 
-}*/
+}
 
 /*  Engagement Carousel
 *************************************************/
@@ -227,6 +244,77 @@ label {
     }
 }
 
+/*  Proposal
+*************************************************/
+.homepageContainer .proposal {
+    /*height: 600px;*/
+    background-image: url(http://www.ubackground.com/_ph/12/163308756.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-color: #636363;
+    padding: 250px 0px 100px;
+    /*margin-top: 150px;*/
+}
+.proposal .proposal-box {
+    width: 95%;
+    max-width: 800px;
+    background-color: #252525;
+    margin: 0px auto 0px auto;
+    padding: 0px 40px;
+    border: 10px solid rgb(255, 255, 255);
+    border: 10px solid rgba(255, 255, 255, .5);
+    border-radius: 5px;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+.proposal .proposal-slide {
+    width: 100%;
+    height: 470px;
+}
+.proposal .container {
+    position: relative;
+    top: -430px;
+    left: -130px;
+    width: 700px;
+    padding: 0px;
+    margin: 0px;
+}
+.proposal .carousel-caption {
+    width: 100%;
+    height: 100%;
+}
+.proposal .proposal-title {
+    width: 100%;
+    font-size: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-bottom: 2px solid #ffffff;
+    padding: 20px;
+    margin-bottom: 50px;
+}
+.proposal .proposal-story {
+    font-size: 18px;
+    line-height: 24px;
+    text-align: left;
+}
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
+
 
 /*  Info Snippets
 *************************************************/
@@ -234,7 +322,7 @@ label {
 .info-container {
     z-index: 998;
     position: relative;
-    top: -40px;
+    top: -90px;
     max-width: 1100px;
     margin: 0 auto;
 }
@@ -306,93 +394,12 @@ label {
     }
 }
 
-/*  Proposal
-*************************************************/
-.homepageContainer .proposal {
-    /*height: 600px;*/
-    background-image: url(http://www.ubackground.com/_ph/12/163308756.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center center;
-    background-color: #636363;
-    padding: 100px 0px;
-}
-.proposal .proposal-box {
-    /*height: 460px;*/
-    width: 80%;
-    max-width: 800px;
-    background-color: #252525;
-    margin: 0px auto 0px auto;
-    padding: 0px 40px;
-    border: 10px solid rgb(255, 255, 255);
-    border: 10px solid rgba(255, 255, 255, .5);
-    border-radius: 5px;
-    -webkit-background-clip: padding-box;
-    background-clip: padding-box;
-}
-/*.proposal .proposal-outline {
-    width: 79%;
-    max-width: 840px;
-    height: 500px;
-    border: 20px solid rgba(255, 255, 255, 0.4);
-    opacity: 0.5;
-    padding: 30px;
-    margin: 0 auto;
-}*/
-.proposal .proposal-slide {
-    width: 100%;
-    height: 470px;
-}
-.proposal .container {
-    position: relative;
-    top: -430px;
-    left: -130px;
-    width: 700px;
-    padding: 0px;
-    margin: 0px;
-}
-.proposal .carousel-caption {
-    width: 100%;
-    height: 100%;
-}
-.proposal .proposal-title {
-    width: 100%;
-    font-size: 40px;
-    line-height: 40px;
-    text-align: center;
-    border-bottom: 2px solid #ffffff;
-    padding: 20px;
-    margin-bottom: 50px;
-}
-.proposal .proposal-story {
-    font-size: 18px;
-    line-height: 24px;
-    text-align: left;
-}
-/* Responsive*/
-@media (min-width: 992px) {
-    
-}    
-
-@media (max-width: 991px) { 
-    
-}
-@media (max-width: 768px) { 
-    
-}
-
-@media (max-width: 425px) {
-
-}
-
 /*  Meet The Crew
 *************************************************/
 .homepageContainer .meet-the-crew {
     position: relative;
     z-index: 997;
-    height: 750px;
-    border-top: 2px solid #ffffff;
+    height: 748px;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0 0 12px #ffffff;
 }
@@ -413,6 +420,20 @@ label {
 }
 .meet-the-crew .crew-overlay .row {
     height: 100% !important;
+}
+.meet-the-crew .overlay-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0px auto;
+}
+.meet-the-crew .overlay-container img {
+    display: inline-block;
+    max-width: 400px;
+    max-height: 375px;
+    padding-top: 20px;
+}
+.meet-the-crew .meet-overlay-bridsmaids-text, .meet-the-crew .meet-overlay-groomsmen-text {
+    max-width: 265px !important;
 }
 .meet-the-crew .meet-the-people {
     height: 375px;
@@ -441,18 +462,112 @@ label {
 
 }
 
+
+/*  Registry
+*************************************************/
+.registry {
+    background-image: url('../../support/images/carousel/carousel-hands.jpg');
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: 2px solid;
+    box-shadow: 0px 0px 12px #ffffff;
+}
+.registry .registry-shadow {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 150px 15px;
+}
+.registry .registry-cont {
+    max-width: 685px;
+    margin: 0 auto;
+}
+.registry .registry-title {
+    color: #ffffff;
+    text-align: center;
+    font-size: 50px;
+    font-weight: 500;
+    line-height: 50px;
+    margin: 0px 0px 30px;
+}
+.registry .registry-text {
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+}
+.registry .registry-stores {
+    padding: 50px 0px 0px;
+}
+.registry .store {
+    width: 100%;
+    max-width: 300px;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 25px;
+    text-align: center;
+    padding: 50px 0px;
+    border-top: 4px solid;
+    border-bottom: 4px solid;
+    margin: 10px 20px;
+}
+.registry .store:hover {
+    border-top: 4px solid #901b1b;
+    border-bottom: 4px solid #901b1b;
+    letter-spacing: 1px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.5);
+}
+
+
+/* Responsive */
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+
+}
+@media (max-width: 425px) {
+
+}
+
+
+/*  FAQ
+*************************************************/
+
+
+
+/* Responsive*/
+@media (min-width: 992px) {
+    
+}    
+
+@media (max-width: 991px) { 
+    
+}
+@media (max-width: 768px) { 
+    
+}
+
+@media (max-width: 425px) {
+
+}
+
 /*  Counters
 *************************************************/
 .counters {
     z-index: 100;
     position: relative;
-    border-top: 2px solid #ffffff;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0px 0px 12px #ffffff;
 }
 .counters .rsvp-container, .counters .countdown-container {
-    padding: 100px 50px;
-    background-position: center top;
+    min-height: 700px;
+    padding: 200px 50px;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -488,115 +603,6 @@ label {
     line-height: 130px;
     padding: 0px 0px 10px 0px;
 }
-/* Responsive*/
-@media (min-width: 992px) {
-    
-}    
-
-@media (max-width: 991px) { 
-    
-}
-@media (max-width: 768px) { 
-    
-}
-
-@media (max-width: 425px) {
-
-}
-
-
-/*  Registry
-*************************************************/
-#pad0 .homeBoxes .homeBox {
-    padding: 45px 0px;
-    vertical-align: middle;
-}
-.homeBox i {
-    font-size: 1.7em;
-    margin-bottom: 5px;
-}
-
-#pad0 .homeBoxes .homeBoxLarge {
-    padding: 0em;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-.homeBoxes #annabella-1 {
-    background-image: url('../../support/images/annabella1.jpg');
-}
-.homeBoxes #annabella-2 {
-    background-image: url('../../support/images/annabella2.jpg');
-}
-.homeBoxes #annabella-3 {
-    background-image: url('../../support/images/annabella3.jpg');
-}
-.homeBoxes #annabella-4 {
-    background-image: url('../../support/images/annabella4.jpg');
-}
-.homeBoxes img {
-    max-height: 176px;
-}
-.red {
-    background: #E60021;
-}
-.homeBoxes .homeBoxTextContainer {
-    display: block;
-    text-align: center;
-    font-size: 1.5em;
-    line-height: 1.1;
-}
-.homeBoxTextContainer .homeBoxIcon {
-    font-size: 4.0em;
-    margin-bottom: 10px;
-}
-section .row {
-    margin: 0px;
-}
-/* Responsive */
-@media (min-width: 992px) {
-    .homeBoxLarge {
-        height: 176px;
-    }
-}    
-
-@media (max-width: 991px) { 
-    #pad0 .homeBoxes .homeBox, .homeBoxLarge {
-        height: 246px;
-        padding: 80px 0px;
-    }
-    .homeBoxes img {
-        height: 246px;
-    }
-}
-@media (max-width: 768px) { 
-    .homeBox .homeBoxTextContainer .fa {
-        font-size: 1em;
-        margin-bottom: 0px;
-    }
-    .homeBoxes .homeBoxTextContainer {
-        height: 100%;
-        border-bottom: 1px solid #ffffff;
-        padding: 2em;
-    }
-    #pad0 .homeBoxes .homeBox {
-        padding: 0px;
-    }
-}
-@media (max-width: 425px) {
-    #pad0 .homeBoxes .homeBox {
-        height: 100%;
-    }
-    .homeBoxes .homeBoxTextContainer {
-        text-align: left;
-    }
-}
-
-
-/*  FAQ
-*************************************************/
-
-
-
 /* Responsive*/
 @media (min-width: 992px) {
     

@@ -10,11 +10,11 @@ nav a {
     color: #ffffff;
     text-decoration: none;
 }
-nav .mega-menu:hover, .nav-menu:hover, .sub-menu:hover {
+/*nav .mega-menu:hover, .nav-menu:hover, .sub-menu:hover {
     background-color: rgba(9, 17, 115, 0.7);
     -webkit-transition: width 2s;
     transition: width 2s;
-}
+}*/
 nav i {
     margin-right: 10px;
 }
@@ -60,10 +60,6 @@ nav .sub-menu {
     background-size: cover;
     box-shadow: 0 3px 5px rgba(0,0,0,0.4);
 }
-.navbar nav {
-    float: right;
-    display: inline-block;
-}
 .dropdown-content {
     display: none;
     z-index: 998;
@@ -85,7 +81,7 @@ nav .sub-menu {
     padding: 0px 15px;
 }
 .nav-list li:hover, .dropdown-container:hover .dropbtn {
-    background-color: rgba(9, 17, 115, 0.7);
+    background-color: rgba(165, 0, 0, 0.5);
 }
 .navbar .mega-menu, .nav-menu {
     position: relative;
@@ -93,13 +89,14 @@ nav .sub-menu {
     line-height: 60px;
     white-space: nowrap;
     padding: 0px 15px;
-    border-left: 1px solid #000000;
     font-size: 16px;
     font-weight: 500;
     text-align: left;
     text-transform: uppercase;
     cursor: pointer;
-    margin-left: -5px;
+}
+.navbar .nav-menu {
+    float: right;
 }
 nav .menu-container {
     position: relative;
