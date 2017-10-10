@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html ng-app="WebApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>Dudley and Rachael's Wedding</title>
+    <meta name="description" content="Dudley Dickerson and Rachael Robertson are getting married in June of 2018. Join us for one of the most memorable days of our lives!">
+    <meta name="author" content="{{ngMeta['author']}}">
+    <meta name="expires" content="never">
+    <meta name="distribution" content="global">
+    <meta name="locale" content="en_US">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Angular --> 
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ng-meta/0.3.9/ngMeta.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+     <!-- Font Awesome -->
+    <script src="https://use.fontawesome.com/afb5db4e40.js"></script>
+
+    <script rel="text/javascript" src="navbar.js"></script>
+    <script rel="text/javascript" src="main.js"></script>
+    <script rel="text/javascript" src="factories.js"></script>
+    <script rel="text/javascript" src="controllers.js"></script>
+    <!--<script rel="text/javascript" src="meta.js"></script>-->
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="navbar.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="essentials.css">
+    <link rel="stylesheet" href="home.css">
+
+
+    <!--<link href="support/plugins/countdown/presets/tick.css" rel="stylesheet">
+    <link href="support/plugins/countdown/presets/preset.css" rel="stylesheet">-->
+    
+</head>
+<body>
+    <div class="websiteContainer">
+        <div class="navigation">
+            <div class="navbar">
+                <nav class="nav-main">
+                    <ul class="nav-list" align="center">
+                        <li class="mega-menu"><a href="#">RSVP</a></li>
+                        <!--<li class="mega-menu">
+                            <div class="dropdown-container">
+                                <a href="" class="dropbtn">Photos</a>
+                                <ul class="dropdown-content">
+                                    <li><a class="dropdown-text">Engagement</a></li>
+                                    <li><a class="dropdown-text">Wedding</a></li>
+                                    <li><a class="dropdown-text">Honeymoon</a></li>
+                                </ul>
+                            </div>
+                        </li>-->
+                        <li class="mega-menu"><a href="">About Us</a></li>
+                        <li class="mega-menu"><a href="">Registry</a></li>
+                        <li class="mega-menu"><a href="">FAQs</a></li>
+                    </ul>
+                </nav>
+                <nav class="nav-menu"> <!--   Mobile Menu    -->
+                    <a class="menu" onclick="toggleDropdown()"><i class="fa fa-bars"></i>Menu</a>
+                    <ul id="menu-toggle" class="sidebar-menu">
+                        <li class="sub-menu"><a href="#">RSVP</a></li>
+                        <li class="sub-menu"><a href="#">About Us</a></li>
+                        <li class="sub-menu"><a href="#">Registry</a></li>
+                        <li class="sub-menu"><a href="#">FAQs</a></li>
+                    </ul> <!-- end .sidebar-menu -->
+                </nav> <!-- end .nav-menu -->
+            </div>
+        </div>
+        <div class="homepageContainer">
+            
+                <!-- Top Photo 
+                ======================================================================== -->
+                <section class="top-photo">
+                    <!--<p class="married-text col-md-12">We are getting married!</p>-->
+                </section>
+            
+            
+                <!-- RSVP
+                ======================================================================== -->
+                <section class="RSVP">
+                    <form action="" class="row">
+                        <p class="form-header">RSVP Now!</p>
+                        <div class="col-md-12 col-sm-12"><input name="name" type="text" placeholder="Name (Individual or Family)" required></div>
+                        <div class="col-md-6 col-sm-12"><input name="guests" type="number" placeholder="Number of Guests" required></div>
+                        <div class="col-md-6 col-sm-12"><input name="password" type="text" placeholder="Password" required></div>
+                        <p class="form-family col-md-12">Will Your Family Be There?</p>
+                        <div class="btn-block" align="center">
+                            <div class="form-btn" id="yes-btn" ng-click="">YES</div>
+                            <div class="form-btn" id="no-btn" ng-click="">NO</div>
+                        </div>
+                    </form>
+                </section>
+            
+                <!-- Annabella
+                ======================================================================== -->
+                <div class="annabella"></div>
+            
+            
+            
+            
+            
+            
+                <!-- Engagement Carousel
+                ======================================================================== -->
+                <!--<section class="annabella"></section>-->
+                <!--<section class="engagement-carousel">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <script> $('.carousel').carousel({ interval: 100 }) </script>
+                        <ol class="carousel-indicators">
+                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                            <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                            <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+                        </ol>
+                        <div class="carousel-inner" role="listbox">
+                            <div class="item active">
+                                <div class="engage-slide first-slide engage-slide-1" alt="First slide"></div>
+                                <div class="container"><div class="carousel-caption"></div></div>
+                            </div>
+                            <div class="item">
+                                <div class="engage-slide second-slide engage-slide-2" alt="Second slide"></div>
+                                <div class="container"><div class="carousel-caption"></div></div>
+                            </div>
+                            <div class="item">
+                                <div class="engage-slide third-slide engage-slide-3" alt="Third slide"></div>
+                                <div class="container"><div class="carousel-caption"></div></div>
+                            </div>
+                            <div class="item">
+                                <div class="engage-slide fourth-slide engage-slide-4" alt="Fourth slide"></div>
+                                <div class="container"><div class="carousel-caption"></div></div>
+                            </div>
+                            <div class="item">
+                                <div class="engage-slide fourth-slide engage-slide-5" alt="Fifth slide"></div>
+                                <div class="container"><div class="carousel-caption"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
+            
+                <!-- Proposal
+                ========================================================================= -->
+                <!--<section class="proposal">
+                    <div class="proposal-box">
+                        <div class="proposal-body">
+                            <div id="proposalCarousel" class="proposal-carousel slide" data-ride="carousel">
+                                <script> $('.proposal-carousel').carousel({ interval: 100000 }) </script>
+                                <ol class="carousel-indicators">
+                                    <li data-target="#proposalCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#proposalCarousel" data-slide-to="1" class=""></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="item active">
+                                        <div class="proposal-slide first-slide proposal-slide-1" alt="First slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                                <p class="proposal-title">The Proposal - His Perspective</p>
+                                                <p class="proposal-story">The day of the proposal was a normal, but really happy day for us. We goofed around, walked around Berry's campus, and had a great day. While talking at Rachael's dorm room, I initiated a re-occuring, sweet inside joke between us. She used to wear another ring on her ring finger, and I used to take a look at it and say: "I really want a different ring on that finger". After I intiated that conversation that night, it just felt so right to be talking about marraige, and I felt deep in my heart that this is who I wanted to spend my life with, for like the hundredth time. So, I asked her if she could help me with something, and when we were in the middle of her dorm room, I asked her I she would help me to put a different, shinier ring on her finger. More importantly though, if she would like to be my wife.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="proposal-slide second-slide proposal-slide-1" alt="Second slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                                <p class="proposal-title">The Proposal - Her Perspective</p>
+                                                <p class="proposal-story">I was not expecting a proposal at all on that particular day. I knew it was coming sometime. I knew he had a ring and a plan, and I had been trying to get him to give me hints for months! But on that weekend, when he came to visit me at Berry, I was under the impression that the ring was being sized at a jeweler somewhere. We had had a wonderful time together that day, and that evening we were hanging out in my dorm room when somehow we got back on the topic of how much we wanted to marry each other. Before I knew it, he was down on one knee and popping the question! I couldn't have been happier or more surprised!</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>-->
+            
+            
+                <!-- Info Snippets
+                ======================================================================== -->
+                <!--<section class="info-snippets row">
+                    <div class="info-container" align="center">
+                        <img class="info-img col-md-3" src="support/images/info-circles/info-date.png" alt="">
+                        <img class="info-img col-md-3" src="support/images/info-circles/info-time.png" alt="">
+                        <img class="info-img col-md-3" src="support/images/info-circles/info-venue.png" alt="">
+                        <img class="info-img col-md-3" src="support/images/info-circles/info-dress.png" alt="">
+                    </div>
+                </section>-->
+            
+                <!-- Meet The Crew
+                ======================================================================== -->
+                <section class="meet-the-crew row">
+                    <div class="bios" style="display: none;">
+                        <div class="couple-bios" style="display: none;">
+                            <div id="couple-carousel" class="couple-carousel slide" data-ride="carousel">
+                                <!--<script> $('.couple-carousel').carousel({ interval: 100 }) </script>-->
+                                <ol class="carousel-indicators meet-the-crew-imgs">
+                                    <li data-target="#couple-carousel" data-slide-to="0" class="active" style="background-image: url(https://i1.wp.com/writingdragonsblog.files.wordpress.com/2016/02/bfa3108f-956f-4ab9-8fe7-58f8b10eb23d.jpg?w=265&ssl=1);"></li>
+                                    <li data-target="#couple-carousel" data-slide-to="1" class="" style="background-image: url(http://tse1.mm.bing.net/th?id=OIP.yT4dASpFOUFuIY7157KWsgDSEs&pid=Api);"></li>
+                                </ol>
+                                <div class="carousel-inner meet-the-crew-text" role="listbox">
+                                    <div class="item active">
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                                <p class="bio-slide-title">Dudley Dickerson</p>
+                                                <p class="bio-slide-subtitle">The Groom</p>
+                                                <p class="bio-slide-text">sdkfbkfbeiuh dfhdfuhuehghehr geghethggh eggreigreiog  ehgoigheroighergreo egioehgoigher e eireirgjrgj</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                                <p class="bio-slide-title">Rachael Robertson</p>
+                                                <p class="bio-slide-subtitle">The Bride</p>
+                                                <p class="bio-slide-text">bride wdvnwkj dfhdfuhuehghehr geghethggh eggreigreiog  ehgoigheroighergreo egioehgoigher e eireirgjrgj</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bridesmaids-bios" style="display: none;">
+                            <div id="carousel" class="bridesmaids-carousel slide" data-ride="carousel">
+                                <!--<script> $('.bridesmaids-carousel').carousel({ interval: 100 }) </script>-->
+                                <ol class="carousel-indicators meet-the-crew-imgs">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                                    <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                                    <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+                                </ol>
+                                <div class="carousel-inner meet-the-crew-text" role="listbox">
+                                    <div class="item active">
+                                        <div class="bio-slide first-slide engage-slide-1" alt="First slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide second-slide engage-slide-2" alt="Second slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide third-slide engage-slide-3" alt="Third slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide fourth-slide engage-slide-4" alt="Fourth slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide fourth-slide engage-slide-5" alt="Fifth slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="groomsmen-bios" style="display: none;">
+                            <div id="carousel" class="groomsmen-carousel slide" data-ride="carousel">
+                                <!--<script> $('.groomsmen-carousel').carousel({ interval: 100 }) </script>-->
+                                <ol class="carousel-indicators meet-the-crew-imgs">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+                                    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+                                    <li data-target="#myCarousel" data-slide-to="3" class=""></li>
+                                </ol>
+                                <div class="carousel-inner meet-the-crew-text" role="listbox">
+                                    <div class="item active">
+                                        <div class="bio-slide first-slide engage-slide-1" alt="First slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide second-slide engage-slide-2" alt="Second slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide third-slide engage-slide-3" alt="Third slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="item">
+                                        <div class="bio-slide fourth-slide engage-slide-4" alt="Fourth slide"></div>
+                                        <div class="container">
+                                            <div class="carousel-caption">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="crew-overlay col-md-12" >
+                        <div style="height: 371px;">
+                            <div class="meet-the-couple">
+                                <div class="overlay-container">
+                                    <img src="http://localhost:8888/Projects/Wedding%20Site/app/support/images/couple-text.png" class="meet-overlay-couple-img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="meet-the-people">
+                            <div class="row">
+                                <div class="bridesmades col-md-6">
+                                    <div class="overlay-container">
+                                        <img src="http://localhost:8888/Projects/Wedding%20Site/app/support/images/woman-single.png" class="meet-overlay-imgs meet-overlay-bridsmaids-img">
+                                        <img src="http://localhost:8888/Projects/Wedding%20Site/app/support/images/bridesmaids.png" class="meet-overlay-imgs meet-overlay-bridsmaids-text">
+                                    </div>
+                                </div>
+                                <div class="groomsmen col-md-6">
+                                    <div class="overlay-container">
+                                        <img src="http://localhost:8888/Projects/Wedding%20Site/app/support/images/groomsmen.png" class="meet-overlay-imgs meet-overlay-groomsmen-text">
+                                        <img src="http://localhost:8888/Projects/Wedding%20Site/app/support/images/man-single.png" class="meet-overlay-imgs meet-overlay-groomsmen-img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- FAQ
+                ======================================================================== -->
+                <section class="faqs">
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p> When will the wedding be held?</div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p> June 8, 2018 at 5:30pm</div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p> Where will the the ceremony and reception be?</div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p> Both the ceremony and the reception will be at Annabella of Cedar Glen in Huntsville, AL.</div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p> Will food and drink be served at the reception?</div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p> Food and drink will be provided. We will also be providing wine and champagne.</div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                        <div class="faq-card">
+                            <div class="question">
+                                <div class="faq-question"><p class="quest-txt">Question:</p></div>
+                                <div class="faq-answer"><p class="ans-txt">Answer:</p></div>
+                            </div>
+                        </div>
+                </section>
+
+                <!-- Registry
+                ======================================================================== -->
+                <section class="registry">
+                    <div class="registry-shadow">
+                        <div class="registry-cont">
+                            <div class="registry-top-text">
+                                <h2 class="registry-title">Registry</h2>
+                                <p class="registry-text">By popular demand, here is a place to support us as we begin our journey as a married couple. Listed below are two stores where we are registered, and you can purchase gifts directly from our online registry at both of them. All sorts of gifts are very much appreciated, large or small.</p>
+                            </div>
+                            <div class="registry-stores">
+                                <a class="store transition" href="">Bed Bath & Beyond</a>
+                                <a class="store transition" href="">Target</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                
+            
+                <!-- Counters
+                ======================================================================== -->
+                <section class="counters row">
+                    <div class="rsvp-container col-md-12">
+                        <div class="counter-inner-square rsvp-box col-md-4 col-sm-12">
+                            <div class="counter-container">
+                                <div class="rsvp-counter">0</div>
+                                <p class="counter-text">People coming so far!</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="countdown-container col-md-12">
+                        <div class="counter-inner-square countdown-box col-md-4 col-sm-12">
+                            <div class="rsvp-counter">0</div>
+                            <div class="timer" style="display: none;">
+                                <div>
+                                    <style>
+            
+                                        .tick {
+                                            margin-bottom:3em;
+                                        }
+            
+                                        .tick-group {
+                                            position:relative;
+                                        }
+            
+                                        .tick-line-rail {
+                                            width:3px;
+                                            height:6em;
+                                            background-color: rgba(0, 0, 0, 0.1);
+                                        }
+            
+                                        .tick-line-fill {
+                                            background-color: rgba(0, 0, 0, 0.5);
+                                        }
+                                        
+                                        .tick-text[data-key='label'] {
+                                            position:absolute;
+                                            color: rgba(0, 0, 0, 0.25);
+                                            text-transform: uppercase;
+                                            transform-origin: left bottom;
+                                            transform: rotateZ(90deg);
+                                            letter-spacing: .25em;
+                                            bottom: 75%;
+                                            left: 100%;
+                                            margin-left: .875em;
+                                        }
+            
+                                        .tick-line {
+                                            position:absolute;
+                                        }
+            
+                                        /* start from small screens */
+                                        .tick-text[data-key='value'] {
+                                            font-size:1.5em;
+                                            min-width:1.35em;
+                                            text-align:center;
+                                            margin-left:-.25em;
+                                            margin-right:-.25em;
+                                        }
+            
+                                        .tick-group {
+                                            margin-right:3.5em;
+                                        }
+            
+                                        .tick-line {
+                                            right: -0.85em;
+                                            top: .5em;
+                                        }
+                                        
+                                        @media (min-width:30em) {
+            
+                                            .tick-text[data-key='value'] {
+                                                font-size:3em;
+                                                margin-left:0;
+                                                margin-right:0;
+                                            }
+            
+                                            .tick-line {
+                                                right: -0.6em;
+                                                top: 1.125em;
+                                            }
+            
+                                            .tick-group {
+                                                margin-right:3em;
+                                            }
+            
+                                        }
+                                    </style>
+            
+                                    <div class="tick" data-did-init="handleTickInit">
+                                        <div data-layout="horizontal center" 
+                                             data-repeat="true" 
+                                             data-transform="
+                                                rotate(
+                                                    transform(
+                                                    value(days),
+                                                    fraction(0,365),
+                                                    input() -> pad(00)
+                                                    ),
+                                                    transform(
+                                                    value(hours),
+                                                    fraction(0,24),
+                                                    input() -> pad(00)
+                                                    ),
+                                                    transform(
+                                                    value(minutes),
+                                                    fraction(0,60),
+                                                    input() -> pad(00)
+                                                    ),
+                                                    transform(
+                                                    value(seconds),
+                                                    fraction(0,60),
+                                                    input() -> pad(00)
+                                                    )
+                                                ) ->
+                                                map( keys( label, progress, value ) )">
+                                            <div class="tick-group">
+                                                <div data-key="value" data-view="text"></div>
+                                                <div data-key="label" data-view="text"></div>
+                                                <div data-key="progress" data-view="line" data-transform="tween(750ms, ease-out-back)" data-style="orientation:vertical; flip:true"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <script>
+                                        function handleTickInit(tick) {
+                                    
+                                            var counter = Tick.count.schedule('every first day of november at 12:00', {
+                                                format:['d','h','m','s']
+                                            });
+                                    
+                                            counter.onupdate = function(value) {
+                                                tick.value = value
+                                            };
+                                    
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                            <p class="counter-text">Until the big day!</p>
+                        </div>
+                    </div>
+                </section>
+            </div> <!-- end .homepageContainer -->
+        <footer class="footer">
+            <center class="writtenBy">Website designed and developed by Dudley Dickerson with suggestions from my lovely fiancé Rachael Robertson.</center>
+        </footer>
+    </div>
+    <script src="support/plugins/countdown/presets/tick.js"></script>
+</body>
+</html>
