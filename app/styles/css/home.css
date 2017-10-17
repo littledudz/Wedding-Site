@@ -1,9 +1,9 @@
 /*  Globals
 *************************************************/
-.homepageContainer {
+/* .homepageContainer {
     max-width: 1400px;
     margin: 0 auto;
-}
+} */
 .homepageContainer .row {
     margin: 0px
 }
@@ -45,12 +45,13 @@
 /*  Top Photo
 *************************************************/
 .top-photo {
-    background-image: url('../../support/images/carousel/carousel-tree.jpg');
+    background-image: url('carousel-tree.JPG');
     background-repeat: no-repeat;
     background-size: cover;
-    /*background-attachment: fixed;*/
+    background-attachment: fixed;
     background-position: center center;
-    height: 700px;
+    background-position-y: 0px;
+    height: 900px;
     width: 100%;
     border-bottom: 2px solid white;
     box-shadow: 0px 0px 12px white;
@@ -65,7 +66,7 @@
 }
 @media (max-width: 768px) { 
     .top-photo {
-        height: 500px;
+        height: 700px;
     }
 }
 
@@ -133,7 +134,8 @@
     max-height: 40px;
     color: #ffffff;
     font-size: 20px;
-    font-weight: 400px;
+    line-height: 20px;
+    font-weight: 400;
     text-align: center;
     border: 2px solid #ffffff;
     border-radius: 10px;
@@ -147,7 +149,7 @@
 }    
 .RSVP #yes-btn {
     background: #901b1b;
-    font-weight: 700px !important;
+    font-weight: 700 !important;
     box-shadow: 0 0 12px #ffffff;
 }
 label {
@@ -178,9 +180,8 @@ label {
 *************************************************/
 .annabella {
     height: 750px;
-    background-image: url('../../support/images/annabella1.jpg');
+    background-image: url('annabella1.jpg');
     background-position: center center;
-    background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
     border-bottom: 2px solid #ffffff;
@@ -212,19 +213,19 @@ label {
     background-position: center;
 }
 .engage-slide-1 {
-    background-image: url('../../support/images/carousel/carousel-creek.jpg');
+    background-image: url('carousel-creek.JPG');
 }
 .engage-slide-2 {
-    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
+    background-image: url('carousel-cuddles.JPG');
 }
 .engage-slide-3 {
-    background-image: url('../../support/images/carousel/carousel-hands.jpg');
+    background-image: url('carousel-hands.JPG');
 }
 .engage-slide-4 {
-    background-image: url('../../support/images/carousel/carousel-ring.jpg');
+    background-image: url('carousel-ring.JPG');
 }
 .engage-slide-5 {
-    background-image: url('../../support/images/carousel/carousel-swing.jpg');
+    background-image: url('carousel-swing.JPG');
 }
 /* Responsive*/
 @media (min-width: 992px) {
@@ -466,7 +467,7 @@ label {
 /*  Registry
 *************************************************/
 .registry {
-    background-image: url('../../support/images/carousel/carousel-hands.jpg');
+    background-image: url('carousel-hands.JPG');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -477,6 +478,7 @@ label {
 .registry .registry-shadow {
     background: rgba(0, 0, 0, 0.7);
     padding: 150px 15px;
+    border-bottom: 2px solid #ffffff;
 }
 .registry .registry-cont {
     max-width: 685px;
@@ -502,6 +504,7 @@ label {
     width: 100%;
     max-width: 300px;
     display: inline-block;
+    color: #ffffff;
     font-size: 25px;
     line-height: 25px;
     text-align: center;
@@ -537,7 +540,57 @@ label {
 
 /*  FAQ
 *************************************************/
-
+.faqs {
+    position: relative;
+    z-index: 50; 
+    background: #000000 url(https://boards.420chan.org/sagan/src/1418249487586.jpg) center center/cover no-repeat;
+    border-bottom: 2px solid white;
+    box-shadow: 0px 0px 12px #ffffff;
+    padding: 0px 30px 100px;
+}
+.faqs h2 {
+    color: #ffffff;
+    text-align: center;
+    padding: 30px 20px;
+    margin: 0px;
+}
+.faqs .faq-cont {
+    max-width: 960px;
+    border: 1px solid rgba(255,255,255,0.7); 
+    border-radius: 20px; 
+    background: rgba(0,0,0,0.6); 
+    padding: 15px 40px;
+    margin: 0 auto;
+}
+.faqs .faq-card {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 0px 0px 40px 0px;
+}
+.faqs .faq-question .quest-txt {
+    color: #901b1b;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+    display: inline-block;
+}
+.faqs .faq-question {
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px;
+    border-top: 1px solid rgba(255,255,255,0.7);
+    padding: 40px 0px 10px 0px;
+}
+.faqs .faq-answer .ans-txt {
+    color: #888888;
+    font-size: 20px;
+    line-height: 20px;
+    display: inline-block;
+}
+.faqs .proposal-perspective {
+    margin: 20px 0px 0px 0px;
+}
 
 
 /* Responsive*/
@@ -565,23 +618,22 @@ label {
     box-shadow: 0px 0px 12px #ffffff;
 }
 .counters .rsvp-container, .counters .countdown-container {
-    min-height: 700px;
-    padding: 200px 50px;
+    padding: 150px 50px;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 .counters .counter-inner-square {
     background-color: rgba(0, 0, 0, 0.55);
-    border-radius: 5px;
+    border-radius: 15px;
     padding: 5% 1%;
 }
 .counters .rsvp-container {
-    background-image: url('../../support/images/carousel/carousel-creek.jpg');
+    background-image: url('carousel-creek.JPG');
     border-bottom: 2px solid white;
 }
 .counters .countdown-container {
-    background-image: url('../../support/images/carousel/carousel-cuddles.jpg');
+    background-image: url('carousel-cuddles.JPG');
 }
 .counters .countdown-box {
     float: right;
@@ -591,6 +643,7 @@ label {
     height: 100%;
 }
 .counters .counter-text {
+    color: #ffffff;
     font-size: 24px;
     line-height: 24px;
     font-family: "Raleway", sans-serif;
@@ -599,6 +652,7 @@ label {
 .counters .rsvp-counter {
     display: flex;
     justify-content: center;
+    color: #ffffff;
     font-size: 130px;
     line-height: 130px;
     padding: 0px 0px 10px 0px;
@@ -616,5 +670,10 @@ label {
 }
 
 @media (max-width: 425px) {
-
+    .counters .countdown-box {
+        float: none;
+    }
+    .counters .rsvp-container, .counters .countdown-container {
+        padding: 50px;
+    }
 }

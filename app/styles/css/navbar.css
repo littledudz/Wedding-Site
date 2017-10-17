@@ -83,6 +83,10 @@ nav .sub-menu {
 .nav-list li:hover, .dropdown-container:hover .dropbtn {
     background-color: rgba(165, 0, 0, 0.5);
 }
+.mega-menu a:focus, .sub-menu a:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
 .navbar .mega-menu, .nav-menu {
     position: relative;
     height: 60px;
@@ -138,73 +142,3 @@ nav .menu-container {
         top: -30px;
     }
 }
-
-
-
-
-/*.navbar {
-    margin: 0px 0px 0px 0px;
-    padding: 0px 0px 0px 0px;
-    border: none;
-}
-.topNav {
-    height: 0px;
-    background: #7d7e7d;
-}
-.topNav .navGraphic img {
-    max-height: 180px;
-    float: left;
-    position: relative;
-    z-index: 100;
-    top: 10px;
-    left: 34%;
-    right: 50%;
-}
-.topNav .counterContainer {
-    float: right;
-    margin-top: -12px;
-}
-.counterContainer .counterImage {
-    max-height: 135px;
-}
-.bottomNav {
-    height: 233px;
-    font-weight: 700;
-    border-bottom: 1px solid #999999;
-    background: #7d7e7d;
-    background: -webkit-linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
-    background: -moz-linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
-    background: -o-linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
-    background: linear-gradient(#7d7e7d 0%, #1C1C1C 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7d7e7d', endColorstr='#0e0e0e',GradientType=0 );
-}
-.bottomNav .navLinksContainer {
-    width: 62%;
-    margin: 0px 19%;
-    display: inline-block;
-}
-.navLinksContainer .navLinks a {
-    padding: 16px 15px 16px 15px; 
-}
-.navLinksContainer .navLinks a:hover {
-    color: #c31717;
-    background-color: transparent;
-}
-.dropdown .dropdownList {
-    width: 200px;
-    background-color: #1C1C1C;
-    border: 1px solid #999999;
-}
-.dropdownList.dropdown-menu .dropdownListItems a {
-    width: 100%;
-    color: #ffffff;
-    font-size: 14px;
-    line-height: 1em;
-    text-align: left;
-    text-decoration: none;
-    padding: 15px 20px;
-}
-.dropdownList.dropdown-menu .dropdownListItems a:hover {
-    color: #c31717;
-    background-color: #1C1C1C;
-}*/
