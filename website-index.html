@@ -32,26 +32,30 @@
             <div class="navbar">
                 <nav class="nav-main">
                     <ul class="nav-list" align="center">
-                        <li class="mega-menu"><a href="#rsvp">RSVP</a></li>
-                        <li class="mega-menu"><a href="#faqs">FAQs</a></li>
+                        <li class="mega-menu"><a href="https://goo.gl/forms/BxlOhk87KyQ7zWtP2" target="_blank">RSVP</a></li>
+                        <li class="mega-menu" style="margin: 0px 0px 0px 15px;"><a href="#faqs">FAQs</a></li>
                         <li class="mega-menu"><a href="#registry">Registry</a></li>
-                        <li class="mega-menu"><a href="#countdown">Countdown</a></li>
+                        <li class="mega-menu"><a href="#countdowns">Countdown</a></li>
                     </ul>
                 </nav>
                 <nav class="nav-menu">
-                    <a class="menu" onclick="toggleDropdown()"><i class="fa fa-bars"></i>Menu</a>
+                    <a class="menu mobile-rsvp" href="https://goo.gl/forms/BxlOhk87KyQ7zWtP2" target="_blank">RSVP</a>
+                    <a class="menu hamburger" onclick="toggleDropdown()"><i class="fa fa-bars"></i>Menu</a>
                     <ul id="menu-toggle" class="sidebar-menu">
-                        <li class="sub-menu"><a href="#rsvp">RSVP</a></li>
+                        <li class="sub-menu"><a href="https://goo.gl/forms/BxlOhk87KyQ7zWtP2">RSVP</a></li>
                         <li class="sub-menu"><a href="#faqs">FAQs</a></li>
                         <li class="sub-menu"><a href="#registry">Registry</a></li>
-                        <li class="sub-menu"><a href="#countdown">Countdown</a></li>
+                        <li class="sub-menu"><a href="#countdowns">Countdown</a></li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="homepageContainer">
-                <section class="top-photo"></section>
-                <section class="RSVP" id="rsvp">
+                <section class="top-photo">
+<a class="arrow bounce" href="#arrow-scroll"></a>
+</section>
+<div id="arrow-scroll"></div>
+                <!-- <section class="RSVP" id="rsvp" style=>
                     <form action="" class="row">
                         <p class="form-header">RSVP Now!</p>
                         <div class="col-md-12 col-sm-12"><input name="name" type="text" placeholder="Name (Individual or Family)" required></div>
@@ -63,8 +67,29 @@
                             <div class="form-btn" id="no-btn" ng-click="">NO</div>
                         </div>
                     </form>
-                </section>
-                <div class="annabella"></div>
+                </section> -->
+                <div class="annabella">
+<div><div class="tab">
+  <button class="tablinks" onclick="openCity(event, 'London')">Pre-Wedding</button>
+  <button class="tablinks" onclick="openCity(event, 'Paris')" id="defaultOpen">Wedding</button>
+  <button class="tablinks" onclick="openCity(event, 'Tokyo')">Post-Wedding</button>
+</div>
+
+<div id="London" class="tabcontent">
+  <h3>London</h3>
+  <p>London is the capital city of England.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>Paris</h3>
+  <p>Paris is the capital of France.</p> 
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Tokyo</h3>
+  <p>Tokyo is the capital of Japan.</p>
+</div>
+                </div>
                 <section class="faqs" id="faqs">
                     <h2 class="faq-title">Frequently Asked Questions</h2>
                     <div class="faq-cont">
@@ -144,7 +169,7 @@
                         </div>
                     </div>
                 </section>
-                <section class="counters row" id="countdown">
+                <section class="counters row" id="countdowns">
                     <div class="rsvp-container col-md-12">
                         <div class="counter-inner-square rsvp-box col-md-4 col-sm-12">
                             <div class="counter-container">
@@ -155,8 +180,8 @@
                     </div>
                     <div class="countdown-container col-md-12">
                         <div class="counter-inner-square countdown-box col-md-4 col-sm-12">
-                            <div class="rsvp-counter">0</div>
-                            <p class="counter-text">Until the big day!</p>
+                            <div class="rsvp-counter" id="countdown"></div>
+                            <p class="counter-text">days until the big day!</p>
                         </div>
                     </div>
                 </section>
@@ -166,4 +191,77 @@
         </footer>
     </div>
 </body>
+<script type="text/javascript" async>
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+</script>
+<script type="text/javascript" async>
+var countDownDate = new Date("June 8, 2018 17:30:00").getTime();
+var x = setInterval(function() {
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    document.getElementById("countdown").innerHTML = "- " + days + " -";
+    if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("countdown").innerHTML = "EXPIRED";
+    }
+}, 1000);
+</script>
+<script type="text/javascript" async>
+function openCity(evt, cityName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
+document.getElementById("defaultOpen").click();
+</script>
 </html>

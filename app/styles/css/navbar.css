@@ -56,9 +56,11 @@ nav .sub-menu {
     right: 0;
     height: 60px;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000;
     background-size: cover;
-    box-shadow: 0 3px 5px rgba(0,0,0,0.4);
+border-bottom: 2px solid #ffffff;
+border-radius: 0px !important;
+    box-shadow: 0px 0px 5px #ffffff;
 }
 .dropdown-content {
     display: none;
@@ -89,18 +91,56 @@ nav .sub-menu {
 }
 .navbar .mega-menu, .nav-menu {
     position: relative;
-    height: 60px;
-    line-height: 60px;
+    height: 57px;
+    line-height: 57px;
     white-space: nowrap;
     padding: 0px 15px;
     font-size: 16px;
     font-weight: 500;
-    text-align: left;
+    text-align: center;
     text-transform: uppercase;
     cursor: pointer;
+    -webkit-transition: all 450ms cubic-bezier(0.5,1.65,0.4,1.19);
+    -moz-transition: all 450ms cubic-bezier(0.5,1.65,0.4,1.19);
+    -o-transition: all 450ms cubic-bezier(0.5,1.65,0.4,1.19);
+    transition: all 450ms cubic-bezier(0.5,1.65,0.4,1.19);
 }
-.navbar .nav-menu {
+.navbar .mega-menu {
+    min-width: 115px;
+}
+.navbar .mega-menu:first-child {
+    position: relative;
+    top: -50px;
+    height: 120px;
+    background-color: rgb(119, 4, 4);
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    box-shadow: 0px 0px 5px #ffffff;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.navbar .mega-menu:first-child:hover {
+    top: -20px !important;
+}
+.navbar .mega-menu:first-child a {
+    position: relative;
+    top: 50px;
+}
+.navbar .nav-menu .hamburger {
     float: right;
+}
+.navbar .nav-menu .mobile-rsvp {
+    float: left;
+    background-color: rgb(119, 4, 4);
+    border: 2px solid #ffffff;
+    border-top: none;
+    border-radius: 0px 0px 10px 10px;
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 0px 20px;
 }
 nav .menu-container {
     position: relative;

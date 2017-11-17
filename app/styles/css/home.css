@@ -1,3 +1,49 @@
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}
+
+
+
+
+
+
+
+
+
+
+
 /*  Globals
 *************************************************/
 /* .homepageContainer {
@@ -51,11 +97,30 @@
     background-attachment: fixed;
     background-position: center center;
     background-position-y: 0px;
-    height: 900px;
+    height: 100vh;
     width: 100%;
-    border-bottom: 2px solid white;
-    box-shadow: 0px 0px 12px white;
 }
+.arrow { 
+  left: 50%;
+  margin-left:-20px;
+  width: 40px;
+  height: 40px;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAxNi4wLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjwhRE9DVFlQRSBzdmcgUFVCTElDICItLy9XM0MvL0RURCBTVkcgMS4xLy9FTiIgImh0dHA6Ly93d3cudzMub3JnL0dyYXBoaWNzL1NWRy8xLjEvRFREL3N2ZzExLmR0ZCI+DQo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IiB3aWR0aD0iNTEycHgiIGhlaWdodD0iNTEycHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA1MTIgNTEyIiB4bWw6c3BhY2U9InByZXNlcnZlIj4NCjxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yOTMuNzUxLDQ1NS44NjhjLTIwLjE4MSwyMC4xNzktNTMuMTY1LDE5LjkxMy03My42NzMtMC41OTVsMCwwYy0yMC41MDgtMjAuNTA4LTIwLjc3My01My40OTMtMC41OTQtNzMuNjcyICBsMTg5Ljk5OS0xOTBjMjAuMTc4LTIwLjE3OCw1My4xNjQtMTkuOTEzLDczLjY3MiwwLjU5NWwwLDBjMjAuNTA4LDIwLjUwOSwyMC43NzIsNTMuNDkyLDAuNTk1LDczLjY3MUwyOTMuNzUxLDQ1NS44Njh6Ii8+DQo8cGF0aCBmaWxsPSIjRkZGRkZGIiBkPSJNMjIwLjI0OSw0NTUuODY4YzIwLjE4LDIwLjE3OSw1My4xNjQsMTkuOTEzLDczLjY3Mi0wLjU5NWwwLDBjMjAuNTA5LTIwLjUwOCwyMC43NzQtNTMuNDkzLDAuNTk2LTczLjY3MiAgbC0xOTAtMTkwYy0yMC4xNzgtMjAuMTc4LTUzLjE2NC0xOS45MTMtNzMuNjcxLDAuNTk1bDAsMGMtMjAuNTA4LDIwLjUwOS0yMC43NzIsNTMuNDkyLTAuNTk1LDczLjY3MUwyMjAuMjQ5LDQ1NS44Njh6Ii8+DQo8L3N2Zz4=);
+  background-size: contain;
+}
+
+@keyframes bounce {
+from { bottom: 65px; opacity: 0.2; }
+to { bottom: 10px; opacity: 1; }
+}
+.bounce {
+  -webkit-animation: bounce 1s ease-in-out 7s infinite alternate;
+  -moz-animation: bounce 1s ease-in-out 7s infinite alternate;
+  -o-animation: bounce 1s ease-in-out 7s infinite alternate;  
+  animation: bounce 1s ease-in-out 7s infinite alternate;
+  position: fixed;
+}
+
 /* Responsive*/
 @media (min-width: 992px) {
     
@@ -65,9 +130,7 @@
     
 }
 @media (max-width: 768px) { 
-    .top-photo {
-        height: 700px;
-    }
+    
 }
 
 @media (max-width: 425px) {
@@ -184,6 +247,7 @@ label {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    border-top: 2px solid white;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0px 0px 12px #ffffff;
 }
@@ -467,7 +531,8 @@ label {
 /*  Registry
 *************************************************/
 .registry {
-    background-image: url('carousel-hands.JPG');
+    position: relative;
+background-image: url('carousel-hands.JPG');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -644,8 +709,8 @@ label {
 }
 .counters .counter-text {
     color: #ffffff;
-    font-size: 24px;
-    line-height: 24px;
+    font-size: 40px;
+    line-height: 40px;
     font-family: "Raleway", sans-serif;
     text-align: center;
 }
@@ -653,9 +718,12 @@ label {
     display: flex;
     justify-content: center;
     color: #ffffff;
-    font-size: 130px;
-    line-height: 130px;
+    font-size: 50px;
+    line-height: 60px;
+    text-align: center;
+    font-weight: 700;
     padding: 0px 0px 10px 0px;
+    text-shadow: 0px 0px 5px rgb(119, 4, 4);
 }
 /* Responsive*/
 @media (min-width: 992px) {
@@ -675,5 +743,9 @@ label {
     }
     .counters .rsvp-container, .counters .countdown-container {
         padding: 50px;
+    }
+    .counters .counter-text {
+        font-size: 30px;
+        line-height: 35px;
     }
 }
